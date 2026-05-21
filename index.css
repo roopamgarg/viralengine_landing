@@ -1349,11 +1349,14 @@ footer {
   }
   
   .hero-right-container {
-    width: 100%;
-    margin: 2rem 0 0 0;
+    width: 380px;
+    max-width: 100%;
+    height: 340px;
+    margin: 2rem auto 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     overflow: visible;
   }
 
@@ -1420,6 +1423,17 @@ footer {
   .cta-actions .btn {
     width: 100%;
   }
+  
+  .dashboard-widget {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .widget-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 580px) {
@@ -1429,6 +1443,11 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .hero-right-container {
+    width: 290px;
+    height: 260px;
+  }
+
   .hero-dashboard-3d {
     transform: rotateX(15deg) rotateY(-15deg) rotateZ(4deg) scale(0.65) !important;
     animation: float-dashboard-xs 5s ease-in-out infinite alternate !important;
@@ -1441,5 +1460,18 @@ footer {
     100% {
       transform: rotateX(13deg) rotateY(-13deg) rotateZ(3deg) scale(0.65) translateY(-6px);
     }
+  }
+
+  .metrics-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .metric-block {
+    padding: 1.25rem;
+  }
+
+  .metric-number {
+    font-size: 2.75rem;
   }
 }
