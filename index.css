@@ -1270,11 +1270,54 @@ footer {
   }
   
   .nav-links {
-    display: none; /* In production a mobile menu would toggle here */
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(247, 247, 251, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    gap: 1.75rem;
+    box-shadow: 0 10px 30px rgba(12, 10, 24, 0.05);
+    z-index: 100;
+  }
+  
+  .nav-links.active a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
   }
   
   .mobile-toggle {
     display: block;
+  }
+  
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  
+  #btn-nav-cta {
+    padding: 0.6rem 1.15rem;
+    font-size: 0.8rem;
   }
   
   .hero {
@@ -1376,6 +1419,12 @@ footer {
   
   .cta-actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  #btn-nav-cta {
+    display: none;
   }
 }
 
