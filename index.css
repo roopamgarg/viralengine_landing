@@ -476,6 +476,7 @@ header.sticky-nav.scrolled {
   position: relative;
   width: 500px;
   height: 400px;
+  flex-shrink: 0; /* Prevent layout squishing under flex container constraints on mobile */
   background: #FFFFFF;
   border: 1px solid rgba(229, 231, 235, 0.55);
   border-radius: 32px;
@@ -1269,11 +1270,8 @@ footer {
     font-size: 2.25rem;
   }
   
+  /* Smooth dropdown toggle: slide and fade transition */
   .nav-links {
-    display: none;
-  }
-  
-  .nav-links.active {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1284,11 +1282,33 @@ footer {
     background: rgba(247, 247, 251, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 2.5rem;
-    border-bottom: 1px solid var(--glass-border);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
     gap: 1.75rem;
-    box-shadow: 0 10px 30px rgba(12, 10, 24, 0.05);
+    border-bottom: 0px solid transparent;
+    box-shadow: none;
     z-index: 100;
+    transition: 
+      opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-bottom 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+  
+  .nav-links.active {
+    padding: 2.5rem;
+    max-height: 400px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(12, 10, 24, 0.05);
   }
   
   .nav-links.active a {
@@ -1333,6 +1353,13 @@ footer {
   .hero-content {
     text-align: center;
     max-width: 100%;
+  }
+  
+  /* Tablet Hero typography sizing override */
+  .hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
   }
   
   .hero-tag {
@@ -1393,13 +1420,45 @@ footer {
     flex-direction: column;
   }
   
+  /* Optimize service card horizontal reading space and minimum height */
+  .service-card {
+    padding: 2.25rem 1.75rem;
+    min-height: auto;
+  }
+  
   .grid-wide-visual {
     width: 100%;
     height: 180px;
+    margin-top: 1.5rem;
   }
   
+  /* Vertical process connecting line on mobile */
   .process-timeline {
     grid-template-columns: 1fr;
+    gap: 3.5rem;
+    position: relative;
+  }
+  
+  .process-timeline::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 27px; /* Center of first node */
+    bottom: 27px; /* Center of last node */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(180deg, 
+      var(--brand-purple) 0%, 
+      rgba(123, 97, 255, 0.4) 30%, 
+      rgba(168, 85, 247, 0.4) 70%, 
+      var(--brand-indigo) 100%
+    );
+    z-index: 0;
+  }
+  
+  .process-step p {
+    max-width: 280px;
   }
   
   .results-grid {
@@ -1443,6 +1502,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+  section {
+    padding: 4rem 0;
+  }
+
   .hero-right-container {
     width: 290px;
     height: 260px;
@@ -1462,6 +1525,34 @@ footer {
     }
   }
 
+  /* Phone Hero typography sizing override */
+  .hero-content h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+  
+  .hero-content p.subtext {
+    font-size: 1.1rem;
+  }
+
+  /* Extra tight padding on narrow mobile screens to optimize space */
+  .service-card {
+    padding: 1.75rem 1.25rem;
+  }
+  
+  .trust-logos {
+    gap: 1.5rem 1rem;
+  }
+  
+  .logo-item {
+    font-size: 1rem;
+  }
+  
+  .logo-item svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .metrics-card-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1474,4 +1565,43 @@ footer {
   .metric-number {
     font-size: 2.75rem;
   }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Cohesive centered chart metrics details on phones */
+  .chart-summary {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
 }
+
+@media (max-width: 360px) {
+  .hero-right-container {
+    width: 250px;
+    height: 220px;
+  }
+
+  .hero-dashboard-3d {
+    transform: rotateX(15deg) rotateY(-15deg) rotateZ(4deg) scale(0.52) !important;
+    animation: float-dashboard-xxs 5s ease-in-out infinite alternate !important;
+  }
+
+  @keyframes float-dashboard-xxs {
+    0% {
+      transform: rotateX(15deg) rotateY(-15deg) rotateZ(4deg) scale(0.52) translateY(0);
+    }
+    100% {
+      transform: rotateX(13deg) rotateY(-13deg) rotateZ(3deg) scale(0.52) translateY(-5px);
+    }
+  }
+}
+
