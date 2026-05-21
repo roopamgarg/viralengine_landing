@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
           entry.target.classList.add('reveal-visible');
           
           // If this is the case-study dashboard widget, trigger the chart animation
-          if (entry.target.id === 'results' || entry.target.contains(document.getElementById('case-study-widget'))) {
+          if (entry.target.id === 'case-study-widget') {
             animateChart();
           }
           
@@ -152,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
     tabSupport.addEventListener('click', () => updateChartData('support'));
     tabPipeline.addEventListener('click', () => updateChartData('pipeline'));
   }
+
+  // Pre-initialize chart values immediately on load so the visual is never blank
+  animateChart();
 
   // --- 5. SMOOTH INNER LINK NAVIGATION WITH OFFSET ---
   const menuLinks = document.querySelectorAll('a[href^="#"]');
