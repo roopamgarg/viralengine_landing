@@ -439,7 +439,7 @@
           </div>
           
           <!-- Interactive Widget Right -->
-          <div class="dashboard-widget glass-card reveal reveal-delay-1" id="case-study-widget">
+          <div class="dashboard-widget glass-card reveal reveal-delay-1" id="case-study-widget" data-workflow="support">
             <div class="widget-header">
               <span style="font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
                 <span style="width:10px; height:10px; border-radius:50%; background:var(--brand-purple); display:inline-block; box-shadow: 0 0 8px var(--brand-purple);"></span>
@@ -454,15 +454,15 @@
             </div>
             
             <div class="widget-body">
-              <!-- Dynamic bar chart, populated and animated via JavaScript -->
+              <!-- Static CSS-driven bar chart -->
               <div class="chart-container" id="metrics-chart">
                 <div class="chart-bar-wrapper">
-                  <div class="chart-bar-fill" id="bar-before" data-value="100%" style="height: 0%;"></div>
+                  <div class="chart-bar-fill" id="bar-before"></div>
                   <span class="chart-label">Before viralEngine</span>
                 </div>
                 
                 <div class="chart-bar-wrapper">
-                  <div class="chart-bar-fill" id="bar-after" data-value="12%" style="height: 0%;"></div>
+                  <div class="chart-bar-fill" id="bar-after"></div>
                   <span class="chart-label">With viralEngine AI</span>
                 </div>
               </div>
@@ -470,10 +470,10 @@
               <div class="chart-summary">
                 <div class="summary-item">
                   <span class="summary-color-dot"></span>
-                  <span id="metric-label">Support Response Time</span>
+                  <span id="metric-label">Avg. Support Turnaround</span>
                 </div>
                 <div class="summary-item" style="font-size: 1.15rem; font-weight:800; color:var(--brand-purple);">
-                  <span id="metric-saving">-88% savings</span>
+                  <span id="metric-saving">-99.8% reduction</span>
                 </div>
               </div>
             </div>

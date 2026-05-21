@@ -1056,14 +1056,12 @@ header.sticky-nav.scrolled {
   width: 38px;
   background: var(--brand-gradient);
   border-radius: 6px 6px 0 0;
-  height: 0%; /* Injected via JS animation */
-  transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: height 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 10px rgba(123, 97, 255, 0.15);
   position: relative;
 }
 
 .chart-bar-fill::after {
-  content: attr(data-value);
   position: absolute;
   top: -24px;
   left: 50%;
@@ -1071,12 +1069,35 @@ header.sticky-nav.scrolled {
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-primary);
-  opacity: 0;
-  transition: opacity 0.3s ease 0.5s;
+  opacity: 1; /* Always visible for premium static readability */
+  transition: opacity 0.3s ease;
 }
 
-.chart-bar-wrapper:hover .chart-bar-fill::after {
-  opacity: 1;
+/* Static CSS-driven Chart Heights and Values based on Workflow state */
+[data-workflow="support"] #bar-before {
+  height: 90%;
+}
+[data-workflow="support"] #bar-before::after {
+  content: "8.5 hours";
+}
+[data-workflow="support"] #bar-after {
+  height: 6%;
+}
+[data-workflow="support"] #bar-after::after {
+  content: "54 secs";
+}
+
+[data-workflow="pipeline"] #bar-before {
+  height: 85%;
+}
+[data-workflow="pipeline"] #bar-before::after {
+  content: "4.2 hours";
+}
+[data-workflow="pipeline"] #bar-after {
+  height: 8%;
+}
+[data-workflow="pipeline"] #bar-after::after {
+  content: "42 secs";
 }
 
 .chart-label {

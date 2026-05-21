@@ -101,33 +101,19 @@ const init = () => {
     const data = chartData[activeWorkflow];
     if (!data) return;
     
-    // Reset heights first to trigger smooth transition effect
-    if (barBefore) {
-      barBefore.style.height = '0%';
-      barBefore.setAttribute('data-value', '');
-    }
-    if (barAfter) {
-      barAfter.style.height = '0%';
-      barAfter.setAttribute('data-value', '');
+    // Update workflow attribute on the container to trigger static CSS-driven height transition
+    const widget = document.getElementById('case-study-widget');
+    if (widget) {
+      widget.setAttribute('data-workflow', activeWorkflow);
     }
     
-    // Animate to target values
-    setTimeout(() => {
-      if (barBefore) {
-        barBefore.style.height = data.beforeHeight;
-        barBefore.setAttribute('data-value', data.beforeValue);
-      }
-      if (barAfter) {
-        barAfter.style.height = data.afterHeight;
-        barAfter.setAttribute('data-value', data.afterValue);
-      }
-      if (metricLabel) {
-        metricLabel.textContent = data.label;
-      }
-      if (metricSaving) {
-        metricSaving.textContent = data.saving;
-      }
-    }, 150);
+    // Update text labels
+    if (metricLabel) {
+      metricLabel.textContent = data.label;
+    }
+    if (metricSaving) {
+      metricSaving.textContent = data.saving;
+    }
   };
 
   if (revealElements.length > 0) {
