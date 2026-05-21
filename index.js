@@ -4,8 +4,7 @@
  * and high-fidelity case study metric chart animations.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-
+const init = () => {
   // --- 1. MOBILE NAVIGATION TOGGLE ---
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
   const navMenu = document.getElementById('nav-menu');
@@ -35,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('main-header');
   
   const handleScroll = () => {
+    if (!header) return;
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
@@ -42,45 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Run immediately and attach event listener
-  handleScroll();
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  if (header) {
+    // Run immediately and attach event listener
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
 
   // --- 3. VIEWPORT SCROLL-REVEAL SYSTEM ---
   const revealElements = document.querySelectorAll('.reveal');
   
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-visible');
-          
-          // If this is the case-study dashboard widget, trigger the chart animation
-          if (entry.target.id === 'case-study-widget') {
-            animateChart();
-          }
-          
-          // Unobserve after showing to avoid repeat transitions
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
-    });
-  } else {
-    // Fallback for older browsers: show all instantly
-    revealElements.forEach(element => {
-      element.classList.add('reveal-visible');
-    });
-    animateChart();
-  }
-
-  // --- 4. INTERACTIVE CASE STUDY CHART SYSTEM ---
+  // Interactive Chart Elements
   const tabSupport = document.getElementById('tab-support');
   const tabPipeline = document.getElementById('tab-pipeline');
   const barBefore = document.getElementById('bar-before');
@@ -116,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Toggle active classes on tab buttons
     if (workflow === 'support') {
-      tabSupport.classList.add('active');
-      tabPipeline.classList.remove('active');
+      if (tabSupport) tabSupport.classList.add('active');
+      if (tabPipeline) tabPipeline.classList.remove('active');
     } else {
-      tabSupport.classList.remove('active');
-      tabPipeline.classList.add('active');
+      if (tabSupport) tabSupport.classList.remove('active');
+      if (tabPipeline) tabPipeline.classList.add('active');
     }
 
     animateChart();
@@ -128,25 +99,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const animateChart = () => {
     const data = chartData[activeWorkflow];
+    if (!data) return;
     
     // Reset heights first to trigger smooth transition effect
-    barBefore.style.height = '0%';
-    barAfter.style.height = '0%';
-    barBefore.setAttribute('data-value', '');
-    barAfter.setAttribute('data-value', '');
+    if (barBefore) {
+      barBefore.style.height = '0%';
+      barBefore.setAttribute('data-value', '');
+    }
+    if (barAfter) {
+      barAfter.style.height = '0%';
+      barAfter.setAttribute('data-value', '');
+    }
     
     // Animate to target values
     setTimeout(() => {
-      barBefore.style.height = data.beforeHeight;
-      barAfter.style.height = data.afterHeight;
-      
-      barBefore.setAttribute('data-value', data.beforeValue);
-      barAfter.setAttribute('data-value', data.afterValue);
-      
-      metricLabel.textContent = data.label;
-      metricSaving.textContent = data.saving;
+      if (barBefore) {
+        barBefore.style.height = data.beforeHeight;
+        barBefore.setAttribute('data-value', data.beforeValue);
+      }
+      if (barAfter) {
+        barAfter.style.height = data.afterHeight;
+        barAfter.setAttribute('data-value', data.afterValue);
+      }
+      if (metricLabel) {
+        metricLabel.textContent = data.label;
+      }
+      if (metricSaving) {
+        metricSaving.textContent = data.saving;
+      }
     }, 150);
   };
+
+  if (revealElements.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            
+            // If this is the case-study dashboard widget, trigger the chart animation
+            if (entry.target.id === 'case-study-widget') {
+              animateChart();
+            }
+            
+            // Unobserve after showing to avoid repeat transitions
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+    } else {
+      // Fallback for older browsers: show all instantly
+      revealElements.forEach(element => {
+        element.classList.add('reveal-visible');
+      });
+      animateChart();
+    }
+  } else {
+    // If no reveal elements are defined, still animate the chart
+    animateChart();
+  }
 
   if (tabSupport && tabPipeline) {
     tabSupport.addEventListener('click', () => updateChartData('support'));
@@ -180,5 +198,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+};
 
-});
+// Robust entry point executing initialization regardless of race conditions on DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
