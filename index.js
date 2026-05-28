@@ -1,192 +1,169 @@
 /**
- * viralEngine Interactive Client Logic
- * Handles interactive navigation, mobile menu, viewport scroll-reveals,
- * and high-fidelity case study metric chart animations.
+ * viralEngine — Redesigned Interactive Logic
+ * Handles: time display, mobile nav, scroll-reveal, sticky nav state
  */
 
 const init = () => {
-  // --- 1. MOBILE NAVIGATION TOGGLE ---
+
+  // --- 1. LIVE TIME DISPLAY IN NAV ---
+  const navTime = document.getElementById('nav-time');
+
+  const updateTime = () => {
+    if (!navTime) return;
+    const now = new Date();
+    const h = now.getHours().toString().padStart(2, '0');
+    const m = now.getMinutes().toString().padStart(2, '0');
+    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    const h12 = (now.getHours() % 12 || 12).toString().padStart(2, '0');
+    navTime.textContent = `${h12}:${m} ${ampm}`;
+  };
+
+  if (navTime) {
+    updateTime();
+    setInterval(updateTime, 1000);
+  }
+
+
+  // --- 2. MOBILE NAVIGATION TOGGLE ---
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
   if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
+    const toggleMenu = () => {
       navMenu.classList.toggle('active');
       mobileMenuToggle.classList.toggle('active');
-      
-      // Accessibility attributes
-      const expanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true' || false;
-      mobileMenuToggle.setAttribute('aria-expanded', !expanded);
+      const expanded = mobileMenuToggle.classList.contains('active');
+      mobileMenuToggle.setAttribute('aria-expanded', String(expanded));
+    };
+
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
-    // Close mobile menu on clicking any navigation link
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
+    // Close menu when clicking links
+    navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
-  // --- 2. STICKY SHRINIKING NAVBAR FALLBACK ---
+  // Mobile toggle hamburger X animation & styling inside dark drawer
+  const style = document.createElement('style');
+  style.textContent = `
+    .mobile-toggle.active span { background-color: var(--c-white); }
+    .mobile-toggle.active span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    .mobile-toggle.active span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+  `;
+  document.head.appendChild(style);
+
+
+  // --- 3. STICKY NAVBAR SCROLL STATE ---
   const header = document.getElementById('main-header');
-  
+
   const handleScroll = () => {
     if (!header) return;
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    header.classList.toggle('scrolled', window.scrollY > 60);
   };
 
   if (header) {
-    // Run immediately and attach event listener
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
-  // --- 3. VIEWPORT SCROLL-REVEAL SYSTEM ---
-  const revealElements = document.querySelectorAll('.reveal');
-  
-  // Interactive Chart Elements
-  const tabSupport = document.getElementById('tab-support');
-  const tabPipeline = document.getElementById('tab-pipeline');
-  const barBefore = document.getElementById('bar-before');
-  const barAfter = document.getElementById('bar-after');
-  const metricLabel = document.getElementById('metric-label');
-  const metricSaving = document.getElementById('metric-saving');
 
-  // Chart datasets
-  const chartData = {
-    support: {
-      beforeHeight: '90%',
-      beforeValue: '8.5 hours',
-      afterHeight: '6%',
-      afterValue: '54 secs',
-      label: 'Avg. Support Turnaround',
-      saving: '-99.8% reduction'
-    },
-    pipeline: {
-      beforeHeight: '85%',
-      beforeValue: '4.2 hours',
-      afterHeight: '8%',
-      afterValue: '42 secs',
-      label: 'Batch Data Processing',
-      saving: '-99.7% acceleration'
-    }
-  };
+  // --- 4. INTERSECTION OBSERVER SCROLL REVEALS ---
+  const revealEls = document.querySelectorAll(
+    '.process-step, .work-card, .asc-item, .about-text-col, .work-header, .cta-inner'
+  );
 
-  let activeWorkflow = 'support';
+  if ('IntersectionObserver' in window && revealEls.length > 0) {
+    // Add reveal class dynamically
+    revealEls.forEach((el, i) => {
+      el.classList.add('reveal');
+      if (i % 4 === 1) el.classList.add('reveal-delay-1');
+      if (i % 4 === 2) el.classList.add('reveal-delay-2');
+      if (i % 4 === 3) el.classList.add('reveal-delay-3');
+    });
 
-  const updateChartData = (workflow) => {
-    if (activeWorkflow === workflow) return;
-    activeWorkflow = workflow;
-    
-    // Toggle active classes on tab buttons
-    if (workflow === 'support') {
-      if (tabSupport) tabSupport.classList.add('active');
-      if (tabPipeline) tabPipeline.classList.remove('active');
-    } else {
-      if (tabSupport) tabSupport.classList.remove('active');
-      if (tabPipeline) tabPipeline.classList.add('active');
-    }
-
-    animateChart();
-  };
-
-  const animateChart = () => {
-    const data = chartData[activeWorkflow];
-    if (!data) return;
-    
-    // Update workflow attribute on the container to trigger static CSS-driven height transition
-    const widget = document.getElementById('case-study-widget');
-    if (widget) {
-      widget.setAttribute('data-workflow', activeWorkflow);
-    }
-    
-    // Update text labels
-    if (metricLabel) {
-      metricLabel.textContent = data.label;
-    }
-    if (metricSaving) {
-      metricSaving.textContent = data.saving;
-    }
-  };
-
-  if (revealElements.length > 0) {
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-visible');
-            
-            // If this is the case-study dashboard widget, trigger the chart animation
-            if (entry.target.id === 'case-study-widget') {
-              animateChart();
-            }
-            
-            // Unobserve after showing to avoid repeat transitions
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
 
-      revealElements.forEach(element => {
-        revealObserver.observe(element);
-      });
-    } else {
-      // Fallback for older browsers: show all instantly
-      revealElements.forEach(element => {
-        element.classList.add('reveal-visible');
-      });
-      animateChart();
-    }
+    revealEls.forEach(el => observer.observe(el));
   } else {
-    // If no reveal elements are defined, still animate the chart
-    animateChart();
+    // Fallback: show all
+    revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  if (tabSupport && tabPipeline) {
-    tabSupport.addEventListener('click', () => updateChartData('support'));
-    tabPipeline.addEventListener('click', () => updateChartData('pipeline'));
-  }
 
-  // Pre-initialize chart values immediately on load so the visual is never blank
-  animateChart();
-
-  // --- 5. SMOOTH INNER LINK NAVIGATION WITH OFFSET ---
-  const menuLinks = document.querySelectorAll('a[href^="#"]');
-  
-  menuLinks.forEach(anchor => {
+  // --- 5. SMOOTH INTERNAL ANCHOR NAVIGATION WITH OFFSET ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
+      if (!targetId || targetId === '#') return;
+
+      const target = document.querySelector(targetId);
+      if (target) {
         e.preventDefault();
-        
-        // Calculate offset for sticky header height
-        const headerOffset = 100;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
+
+
+  // --- 6. PAUSE MARQUEE ON HOVER (A11Y) ---
+  const tickers = document.querySelectorAll('.ticker-inner, .cta-ticker-inner');
+  tickers.forEach(ticker => {
+    ticker.addEventListener('mouseenter', () => {
+      ticker.style.animationPlayState = 'paused';
+    });
+    ticker.addEventListener('mouseleave', () => {
+      ticker.style.animationPlayState = 'running';
+    });
+  });
+
+
+  // --- 7. WORK CARDS: MAGNETIC HOVER EFFECT ---
+  document.querySelectorAll('.work-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 12;
+      card.style.transform = `translateY(-8px) rotateX(${-y * 0.3}deg) rotateY(${x * 0.3}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
 };
 
-// Robust entry point executing initialization regardless of race conditions on DOMContentLoaded
+
+// Entry point — handles both synchronous and async DOM readiness
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {

@@ -3,536 +3,422 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- SEO Meta Tags -->
-  <title>viralEngine — Smarter Workflows Powered by AI</title>
-  <meta name="description" content="viralEngine helps businesses scale, automate, and optimize their internal and customer-facing workflows using advanced artificial intelligence and custom automation pipelines.">
-  <meta name="keywords" content="AI workflows, automation agency, process automation, AI agents, SaaS optimization, Linear, Apple, Stripe design">
-  
+  <title>viralEngine — AI Workflows That Actually Work</title>
+  <meta name="description" content="viralEngine designs and builds AI-powered workflows that streamline operations, delight users, and drive real business impact. Book a free consultation today.">
+  <meta name="keywords" content="AI workflows, automation agency, process automation, AI agents, SaaS optimization">
+
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="viralEngine — Smarter Workflows Powered by AI">
-  <meta property="og:description" content="Modern AI workflow automation agency implementing intelligent agents, pipeline automation, and custom workflow engineering.">
+  <meta property="og:title" content="viralEngine — AI Workflows That Actually Work">
+  <meta property="og:description" content="We design and build AI-powered workflows that streamline operations, delight users, and drive real business impact.">
   <meta property="og:type" content="website">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 
-  <!-- --- 1. NAVBAR --- -->
-  <header class="sticky-nav" id="main-header">
-    <div class="container">
-      <nav class="nav-container">
-        <!-- Logo -->
-        <a href="#" class="logo" id="nav-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.25rem;">
-            <path d="M4 4.5L12 20.5L20 4.5" stroke="url(#logo-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="logo-grad" x1="4" y1="4.5" x2="20" y2="20.5" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#7B61FF"/>
-                <stop offset="1" stop-color="#A855F7"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          viralEngine
-        </a>
-        
-        <!-- Navigation Links -->
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="main-header">
+    <div class="nav-inner">
+      <!-- Nav Left: Links -->
+      <nav class="nav-left" aria-label="Main Navigation">
         <ul class="nav-links" id="nav-menu">
           <li><a href="#services" id="link-services">Services</a></li>
-          <li><a href="#results" id="link-work">Work</a></li>
+          <li><a href="#work" id="link-work">Work</a></li>
           <li><a href="#process" id="link-process">Process</a></li>
           <li><a href="#about" id="link-about">About</a></li>
         </ul>
-        
-        <!-- Call to Action -->
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-nav-cta">Book a Free Consultation &nbsp; <span>→</span></a>
-          <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
       </nav>
+
+      <!-- Nav Center: Logo -->
+      <a href="#" class="nav-logo" id="nav-logo" aria-label="viralEngine Home">
+        viralEngine<span class="logo-star">✦</span>
+      </a>
+
+      <!-- Nav Right: Time + CTA -->
+      <div class="nav-right">
+        <span class="nav-time" id="nav-time" aria-live="polite"></span>
+        <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-nav" id="btn-nav-cta">Contact</a>
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- --- 2. HERO SECTION --- -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-grid">
-          <!-- Hero Left Content -->
-          <div class="hero-content reveal">
-            <div class="hero-tag">
-              <span class="tag-dot"></span>
-              <span>Next-Gen Workflow Automation</span>
-            </div>
-            <h1>AI that powers<br>how <span class="gradient-text">you</span> work.</h1>
-            <p class="subtext">We design and build AI-powered workflows that streamline operations, delight users, and drive real business impact.</p>
-            <div class="hero-actions">
-              <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-hero-cta">Book a Free Consultation &nbsp; <span>→</span></a>
-              <a href="#results" class="btn-play" id="btn-hero-secondary">
-                See Our Work
-                <span class="play-icon">
-                  <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor" style="transform: translateX(1px);"><polygon points="8 5 20 12 8 19"></polygon></svg>
-                </span>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Hero Right Visual (Ultra-Premium 3D Tilted Workflow Dashboard) -->
-          <div class="hero-right-container reveal reveal-delay-1">
-            <div class="hero-dashboard-3d">
-              <!-- SVG Wires in 3D Space -->
-              <svg class="dashboard-svg" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <!-- Purple/indigo gradient for flowing data (Left side flowing IN) -->
-                  <linearGradient id="flow-grad-left" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#7B61FF" stop-opacity="0.15"/>
-                    <stop offset="100%" stop-color="#A855F7" stop-opacity="1"/>
-                  </linearGradient>
-                  <!-- Indigo/green gradient for flowing data (Right side flowing OUT) -->
-                  <linearGradient id="flow-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#A855F7" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#10B981" stop-opacity="0.15"/>
-                  </linearGradient>
-                </defs>
+      <!-- Background gradient mesh -->
+      <div class="hero-bg-orb orb-1"></div>
+      <div class="hero-bg-orb orb-2"></div>
 
-                <!-- Background Static Wires -->
-                <path class="dashboard-wire-bg" d="M 60,200 L 250,200" />
-                <path class="dashboard-wire-bg" d="M 160,70 Q 160,200 250,200" />
-                <path class="dashboard-wire-bg" d="M 160,330 Q 160,200 250,200" />
-                <path class="dashboard-wire-bg" d="M 250,200 Q 340,200 340,70" />
-                <path class="dashboard-wire-bg" d="M 250,200 Q 340,200 340,330" />
-                <path class="dashboard-wire-bg" d="M 250,200 L 440,200" />
-
-                <!-- Animated Flowing Wires -->
-                <path class="dashboard-wire-flow flow-in" stroke="url(#flow-grad-left)" d="M 60,200 L 250,200" />
-                <path class="dashboard-wire-flow flow-in" stroke="url(#flow-grad-left)" d="M 160,70 Q 160,200 250,200" />
-                <path class="dashboard-wire-flow flow-in" stroke="url(#flow-grad-left)" d="M 160,330 Q 160,200 250,200" />
-                
-                <path class="dashboard-wire-flow flow-out" stroke="url(#flow-grad-right)" d="M 250,200 Q 340,200 340,70" />
-                <path class="dashboard-wire-flow flow-out" stroke="url(#flow-grad-right)" d="M 250,200 Q 340,200 340,330" />
-                <path class="dashboard-wire-flow flow-out" stroke="url(#flow-grad-right)" d="M 250,200 L 440,200" />
-              </svg>
-
-              <!-- Central brand core node 'V' -->
-              <div class="node-center-3d" style="top: 162px; left: 212px;">
-                V
-              </div>
-
-              <!-- Outer Nodes (Hexagonal Workflow Circuit) -->
-              <!-- Top-Left (Robot AI Node) -->
-              <div class="node-outer-3d node-top-left" style="top: 40px; left: 130px;" title="AI Chatbot Agent">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="11" width="18" height="10" rx="2" />
-                  <circle cx="12" cy="5" r="2" />
-                  <path d="M12 7v4" />
-                  <line x1="8" y1="16" x2="8.01" y2="16" stroke-width="3" />
-                  <line x1="16" y1="16" x2="16.01" y2="16" stroke-width="3" />
-                </svg>
-              </div>
-
-              <!-- Top-Right (Growth Chart Node) -->
-              <div class="node-outer-3d node-top-right" style="top: 40px; left: 310px;" title="Real-time Metrics Analytics">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10" stroke-width="2.5" />
-                  <line x1="12" y1="20" x2="12" y2="4" stroke-width="2.5" />
-                  <line x1="6" y1="20" x2="6" y2="14" stroke-width="2.5" />
-                </svg>
-              </div>
-
-              <!-- Middle-Left (Robot AI Node) -->
-              <div class="node-outer-3d node-mid-left" style="top: 170px; left: 30px;" title="AI Operational Engine">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="11" width="18" height="10" rx="2" />
-                  <circle cx="12" cy="5" r="2" />
-                  <path d="M12 7v4" />
-                  <line x1="8" y1="16" x2="8.01" y2="16" stroke-width="3" />
-                  <line x1="16" y1="16" x2="16.01" y2="16" stroke-width="3" />
-                </svg>
-              </div>
-
-              <!-- Middle-Right (Lightning Automation Node) -->
-              <div class="node-outer-3d node-mid-right" style="top: 170px; left: 410px;" title="High-Speed Automation Pipeline">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-
-              <!-- Bottom-Left (Database Stack Node) -->
-              <div class="node-outer-3d node-bottom-left" style="top: 300px; left: 130px;" title="Secure Enterprise Data Integration">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
-                </svg>
-              </div>
-
-              <!-- Bottom-Right (Green Checkmark Validation Node) -->
-              <div class="node-outer-3d node-bottom-right" style="top: 300px; left: 310px;" title="Workflow Validation & Success">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-
-            </div>
-          </div>
+      <div class="hero-inner">
+        <!-- Large editorial headline -->
+        <div class="hero-headline-wrap">
+          <h1 class="hero-headline">
+            <span class="headline-line line-1">
+              <span class="headline-text">BRINGING IDEAS TO</span>
+            </span>
+            <span class="headline-line line-2">
+              <span class="headline-arrow">→</span>
+              <span class="headline-text">LIFE WITH <em class="headline-accent">AI</em></span>
+            </span>
+            <span class="headline-line line-3">
+              <span class="headline-text">AUTOMATION</span>
+            </span>
+          </h1>
         </div>
-      </div>
-    </section>
 
-    <!-- --- 3. TRUST SECTION --- -->
-    <section class="trust" id="trust">
-      <div class="container">
-        <div class="trust-wrapper reveal">
-          <span class="trust-title">Automating Workflows Alongside Leading Teams</span>
-          <div class="trust-logos">
-            <!-- Slack -->
-            <div class="logo-item" title="Slack">
-              <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.5 52.5c0-4.1-3.4-7.5-7.5-7.5s-7.5 3.4-7.5 7.5 3.4 7.5 7.5 7.5h7.5v-7.5zm7.5 0c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5V15c0-4.1-3.4-7.5-7.5-7.5s-7.5 3.4-7.5 7.5v37.5zM47.5 22.5c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5h-7.5v7.5zm0 7.5c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5H10c-4.1 0-7.5-3.4-7.5-7.5s3.4-7.5 7.5-7.5h37.5zM77.5 47.5c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5h-7.5v7.5zm-7.5 0c0-4.1-3.4-7.5-7.5-7.5s-7.5 3.4-7.5 7.5V85c0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5V47.5zM52.5 77.5c0-4.1-3.4-7.5-7.5-7.5s-7.5 3.4-7.5 7.5 3.4 7.5 7.5 7.5h7.5v-7.5zm0-7.5c-4.1 0-7.5-3.4-7.5-7.5s3.4-7.5 7.5-7.5H90c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5H52.5z"/>
-              </svg>
-              <span>Slack</span>
-            </div>
-            
-            <!-- Notion -->
-            <div class="logo-item" title="Notion">
-              <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 10c-2.8 0-5 2.2-5 5v70c0 2.8 2.2 5 5 5h70c2.8 0 5-2.2 5-5V15c0-2.8-2.2-5-5-5H15zm10 15h50c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H25c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm0 18h40c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H25c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zm0 18h50c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H25c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2z"/>
-              </svg>
-              <span>Notion</span>
-            </div>
-
-            <!-- Linear -->
-            <div class="logo-item" title="Linear">
-              <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 5C25.1 5 5 25.1 5 50s20.1 45 45 45 45-20.1 45-45S74.9 5 50 5zm0 18c14.9 0 27 12.1 27 27S64.9 77 50 77 23 64.9 23 50s12.1-27 27-27zm-9 14v26l22-13-22-13z"/>
-              </svg>
-              <span>Linear</span>
-            </div>
-
-            <!-- Shopify -->
-            <div class="logo-item" title="Shopify">
-              <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M82.2 26.6c-.6-.7-1.6-1.1-2.6-1.1h-7.3V19c0-5-4-9-9-9H36.7c-5 0-9 4-9 9v6.5h-7.3c-1 0-2 .4-2.6 1.1-.6.7-.8 1.7-.5 2.6L27 79.1c.5 4.5 4.3 7.9 8.9 7.9h28.2c4.6 0 8.4-3.4 8.9-7.9l9.7-49.9c.3-.9.1-1.9-.5-2.6zM33.7 19c0-1.7 1.3-3 3-3h26.6c1.7 0 3 1.3 3 3v6.5H33.7V19zm18.3 54.5c-7.2 0-13-5.8-13-13s5.8-13 13-13 13 5.8 13 13-5.8 13-13 13z"/>
-              </svg>
-              <span>Shopify</span>
-            </div>
-
-            <!-- Loom -->
-            <div class="logo-item" title="Loom">
-              <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="16"/>
-                <path d="M50 14c-19.9 0-36 16.1-36 36s16.1 36 36 36 36-16.1 36-36-16.1-36-36-36zm0 58c-12.1 0-22-9.9-22-22s9.9-22 22-22 22 9.9 22 22-9.9 22-22 22z"/>
-                <circle cx="50" cy="28" r="7"/>
-                <circle cx="50" cy="72" r="7"/>
-                <circle cx="28" cy="50" r="7"/>
-                <circle cx="72" cy="50" r="7"/>
-              </svg>
-              <span>Loom</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- --- 4. SERVICES SECTION --- -->
-    <section class="services" id="services">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header reveal">
-          <span class="badge">Services & Capabilities</span>
-          <h2>Automate everything that can be automated.</h2>
-          <p>We combine advanced pipeline automation with domain-specific AI models to replace manual friction with seamless processes.</p>
-        </div>
-        
-        <!-- Services Grid -->
-        <div class="services-grid">
-          <!-- Card 1: Workflow Automation -->
-          <div class="service-card glass-card reveal">
-            <div class="service-card-icon">
-              <!-- Custom Node Connection SVG -->
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </div>
-            <h3>Workflow Automation</h3>
-            <p>Connect your cloud apps and internal APIs into synchronous, high-reliability autonomous pipelines. Say goodbye to manual file routing, text copying, and redundant updates.</p>
-            <a href="#cta" class="service-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        <!-- Hero bottom: description left, image right, CTA -->
+        <div class="hero-bottom">
+          <div class="hero-desc-col">
+            <p class="hero-desc">We craft impactful AI workflows, intelligent agents, and custom automation solutions tailored to your needs.</p>
+            <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-hero-cta">
+              Book Free Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
 
-          <!-- Card 2: AI Agents -->
-          <div class="service-card glass-card reveal reveal-delay-1">
-            <div class="service-card-icon">
-              <!-- Custom AI Brain SVG -->
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                <path d="M12 6v12"></path>
-                <path d="M8 10h8"></path>
-                <path d="M8 14h8"></path>
-              </svg>
-            </div>
-            <h3>AI Agents</h3>
-            <p>Deploy specialized digital agents equipped with internal knowledge, tool-access capabilities, and strict guardrails. They act, learn, and deliver business outcomes independently.</p>
-            <a href="#cta" class="service-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-          </div>
-
-          <!-- Card 3: Process Optimization -->
-          <div class="service-card glass-card reveal reveal-delay-2">
-            <div class="service-card-icon">
-              <!-- Custom Optimization Arrow SVG -->
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-                <polyline points="14 8 18 4 22 8"></polyline>
-              </svg>
-            </div>
-            <h3>Process Optimization</h3>
-            <p>We map, analyze, and identify bottlenecks in your operational workflows, eliminating system latency. We redesign data flow architectures to maximize enterprise efficiency.</p>
-            <a href="#cta" class="service-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-          </div>
-
-          <!-- Card 4: Intelligent Integrations -->
-          <div class="service-card glass-card reveal">
-            <div class="service-card-icon">
-              <!-- Custom Plug / Connection SVG -->
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
-                <line x1="22" y1="12" x2="18" y2="12"></line>
-                <line x1="6" y1="12" x2="2" y2="12"></line>
-                <line x1="10" y1="7" x2="10" y2="17"></line>
-              </svg>
-            </div>
-            <h3>Intelligent Integrations</h3>
-            <p>Seamlessly weave bleeding-edge LLMs and real-time AI tools into Slack, Notion, Salesforce, or your custom databases. Maintain enterprise security with absolute data privacy.</p>
-            <a href="#cta" class="service-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-          </div>
-
-          <!-- Card 5: Customer Experience AI (Double Wide Card) -->
-          <div class="service-card glass-card grid-wide reveal reveal-delay-1">
-            <div class="grid-wide-content">
-              <div class="service-card-icon">
-                <!-- Custom Speech / Support Spark SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                  <circle cx="12" cy="10" r="1"></circle>
-                  <circle cx="8" cy="10" r="1"></circle>
-                  <circle cx="16" cy="10" r="1"></circle>
-                </svg>
+          <div class="hero-visual-col">
+            <div class="hero-image-wrap">
+              <img src="./assets/hero_visual.png" alt="AI workflow automation visual with 3D shapes and dashboard" class="hero-img" fetchpriority="high" />
+              <!-- Floating stat chips -->
+              <div class="hero-chip chip-1">
+                <span class="chip-dot"></span>
+                <strong>80%</strong> Manual work reduced
               </div>
-              <h3>Customer Experience AI</h3>
-              <p>Deploy lightning-fast support engines that resolve over 90% of user queries instantly. Powered by Retrieval-Augmented Generation (RAG) to ensure zero hallucination, providing highly contextualized, empathetic client support 24/7/365.</p>
-              <a href="#cta" class="service-link" style="opacity:1; transform:translateY(0);">Request custom demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-            </div>
-            
-            <!-- Dynamic Side Panel Graphic for wide card -->
-            <div class="grid-wide-visual">
-              <div class="wide-mockup-nodes">
-                <div class="wide-node-bar">
-                  <span>📩 Incoming Ticket</span>
-                  <span style="color:var(--text-tertiary)">Unassigned</span>
-                </div>
-                <div class="wide-node-bar">
-                  <span>🧠 viralEngine AI Agent</span>
-                  <span style="color:var(--brand-purple); font-weight:700;">Analyzing Context...</span>
-                </div>
-                <div class="wide-node-bar">
-                  <span>✅ Instant Resolved</span>
-                  <span style="color:#10B981">Sent in 0.3s</span>
-                </div>
+              <div class="hero-chip chip-2">
+                <strong>99.8%</strong> Resolution accuracy
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
-    <!-- --- 5. PROCESS SECTION --- -->
+    <!-- ===== MARQUEE TICKER ===== -->
+    <section class="ticker-section" aria-label="Services offered" id="services">
+      <div class="ticker-track" aria-hidden="true">
+        <div class="ticker-inner">
+          <span class="tick-item">Workflow Automation <span class="tick-star">✦</span></span>
+          <span class="tick-item">AI Agents <span class="tick-star">✦</span></span>
+          <span class="tick-item">Process Optimization <span class="tick-star">✦</span></span>
+          <span class="tick-item">Custom Integrations <span class="tick-star">✦</span></span>
+          <span class="tick-item">Customer Experience AI <span class="tick-star">✦</span></span>
+          <span class="tick-item">RAG Systems <span class="tick-star">✦</span></span>
+          <span class="tick-item">Data Pipelines <span class="tick-star">✦</span></span>
+          <!-- Duplicate for seamless loop -->
+          <span class="tick-item">Workflow Automation <span class="tick-star">✦</span></span>
+          <span class="tick-item">AI Agents <span class="tick-star">✦</span></span>
+          <span class="tick-item">Process Optimization <span class="tick-star">✦</span></span>
+          <span class="tick-item">Custom Integrations <span class="tick-star">✦</span></span>
+          <span class="tick-item">Customer Experience AI <span class="tick-star">✦</span></span>
+          <span class="tick-item">RAG Systems <span class="tick-star">✦</span></span>
+          <span class="tick-item">Data Pipelines <span class="tick-star">✦</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS / EMPOWERING SECTION ===== -->
     <section class="process" id="process">
       <div class="container">
-        <!-- Section Header -->
-        <div class="section-header reveal">
-          <span class="badge">Our Framework</span>
-          <h2>A structured path to automation.</h2>
-          <p>From initial workflow audit to production deployment and proactive enhancement, we manage the entire engineering lifecycle.</p>
+        <div class="process-top">
+          <div class="process-badge-wrap">
+            <span class="process-badge">Our Process</span>
+          </div>
+          <h2 class="process-headline">EMPOWERING YOUR<br>BUSINESS WITH<br><span class="process-headline-muted">TAILORED <em class="process-accent">CREATIVE</em><br>SOLUTIONS</span></h2>
         </div>
-        
-        <!-- Process Timeline Grid -->
-        <div class="process-timeline">
-          <!-- Step 1 -->
-          <div class="process-step reveal">
-            <div class="process-step-node">01</div>
-            <h3>Discover</h3>
-            <p>We deeply audit your business operations to isolate high-impact, manual bottlenecks ripe for automated leverage.</p>
-          </div>
-          
-          <!-- Step 2 -->
-          <div class="process-step reveal reveal-delay-1">
-            <div class="process-step-node">02</div>
-            <h3>Design</h3>
-            <p>We architect custom data pipelines, tool sets, and AI prompt maps tailored directly to your system requirements.</p>
-          </div>
-          
-          <!-- Step 3 -->
-          <div class="process-step reveal reveal-delay-2">
-            <div class="process-step-node">03</div>
-            <h3>Build</h3>
-            <p>Our engineering team builds, integrates, and tests stable custom pipelines with strict enterprise security protocols.</p>
-          </div>
-          
-          <!-- Step 4 -->
-          <div class="process-step reveal reveal-delay-3">
-            <div class="process-step-node">04</div>
-            <h3>Optimize</h3>
-            <p>We monitor systems continuously, utilizing real-time feedback loops to maximize accuracy, speed, and pipeline utility.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- --- 6. RESULTS / CASE STUDIES --- -->
-    <section class="results" id="results">
-      <div class="container">
-        <div class="results-grid">
-          <!-- Results Metrics Left -->
-          <div class="results-content reveal">
-            <span class="badge">Real Results</span>
-            <h2>Proven impacts, not placeholders.</h2>
-            <p>We measure our success strictly in operational output. By building highly-optimized AI automations, we unlock thousands of human hours, allowing teams to focus on exponential growth.</p>
-            
-            <!-- Statistics Grid -->
-            <div class="metrics-card-grid">
-              <!-- Metric 1 -->
-              <div class="metric-block glass-card">
-                <span class="metric-number gradient-text">80%</span>
-                <span class="metric-caption">Manual Work Reduced</span>
-              </div>
-              
-              <!-- Metric 2 -->
-              <div class="metric-block glass-card">
-                <span class="metric-number gradient-text">2.5x</span>
-                <span class="metric-caption">Response Velocity</span>
-              </div>
-              
-              <!-- Metric 3 -->
-              <div class="metric-block glass-card">
-                <span class="metric-number gradient-text">35%</span>
-                <span class="metric-caption">Conversion Rise</span>
-              </div>
-              
-              <!-- Metric 4 -->
-              <div class="metric-block glass-card">
-                <span class="metric-number gradient-text">340h</span>
-                <span class="metric-caption">Saved Monthly / Dev</span>
-              </div>
+        <div class="process-steps">
+          <div class="process-step" id="step-1">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Discover</h3>
+              <p>We deeply audit your business operations to isolate high-impact, manual bottlenecks ripe for automated leverage.</p>
             </div>
-            
-            <a href="#cta" class="btn btn-text">Read full client study case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
           </div>
-          
-          <!-- Interactive Widget Right -->
-          <div class="dashboard-widget glass-card reveal reveal-delay-1" id="case-study-widget" data-workflow="support">
-            <div class="widget-header">
-              <span class="widget-title">
-                <span class="widget-title-dot"></span>
-                viralEngine Live Metrics
-              </span>
-              
-              <!-- Tabs for different workflows -->
-              <div class="widget-tabs">
-                <button class="tab-btn active" id="tab-support" data-workflow="support">Support Agent</button>
-                <button class="tab-btn" id="tab-pipeline" data-workflow="pipeline">Data Pipeline</button>
-              </div>
+          <div class="process-step" id="step-2">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Design</h3>
+              <p>We architect custom data pipelines, tool sets, and AI prompt maps tailored directly to your system requirements.</p>
             </div>
-            
-            <div class="widget-body">
-              <!-- Static CSS-driven bar chart -->
-              <div class="chart-container" id="metrics-chart">
-                <!-- Y-Axis Gridlines Scale -->
-                <div class="chart-y-ticks">
-                  <span>100%</span>
-                  <span>75%</span>
-                  <span>50%</span>
-                  <span>25%</span>
-                  <span>0%</span>
-                </div>
-
-                <div class="chart-bar-wrapper">
-                  <div class="chart-bar-fill" id="bar-before"></div>
-                  <span class="chart-label">Before viralEngine</span>
-                </div>
-                
-                <div class="chart-bar-wrapper">
-                  <div class="chart-bar-fill" id="bar-after"></div>
-                  <span class="chart-label">With viralEngine AI</span>
-                </div>
-              </div>
-              
-              <div class="chart-summary">
-                <div class="summary-item">
-                  <span class="summary-color-dot"></span>
-                  <span id="metric-label">Avg. Support Turnaround</span>
-                </div>
-                <div class="summary-badge">
-                  <span class="summary-badge-dot"></span>
-                  <span id="metric-saving">-99.8% reduction</span>
-                </div>
-              </div>
+          </div>
+          <div class="process-step" id="step-3">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Build</h3>
+              <p>Our engineering team builds, integrates, and tests stable custom pipelines with strict enterprise security protocols.</p>
+            </div>
+          </div>
+          <div class="process-step" id="step-4">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3>Optimize</h3>
+              <p>We monitor systems continuously, utilizing real-time feedback loops to maximize accuracy, speed, and pipeline utility.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- --- 7. FINAL CTA SECTION --- -->
-    <section class="final-cta" id="cta">
+    <!-- ===== RECENT WORK ===== -->
+    <section class="work" id="work">
       <div class="container">
-        <div class="cta-banner reveal">
-          <div class="cta-bg-mesh"></div>
-          
-          <!-- Floating Background Shapes -->
-          <div class="floating-shape shape-1"></div>
-          <div class="floating-shape shape-2"></div>
-          
-          <div class="cta-content">
-            <span class="badge">Consultation</span>
-            <h2>Ready to transform your workflows with AI?</h2>
-            <p>Book a strategic workshop with our expert automation architects. We'll map your opportunities, draft an implementation plan, and show you exactly what's possible.</p>
-            <div class="cta-actions">
-              <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-cta-submit">Book a Free Consultation</a>
-              <a href="#services" class="btn btn-secondary" id="btn-cta-expert">Talk to an Expert</a>
+        <div class="work-header">
+          <div class="work-header-left">
+            <span class="work-count">04</span>
+            <h2 class="work-title">RECENT<br>WORKS</h2>
+          </div>
+          <div class="work-header-right">
+            <span class="work-year">2026</span>
+            <a href="#cta" class="btn-outline" id="btn-view-all">View All Work</a>
+          </div>
+        </div>
+
+        <div class="work-grid">
+          <!-- Work Card 1 -->
+          <article class="work-card work-card--large" id="work-card-1">
+            <div class="work-card-inner">
+              <div class="work-card-visual wc-visual-1">
+                <div class="work-mockup">
+                  <div class="mockup-screen">
+                    <div class="mockup-bar">
+                      <div class="mockup-dots"><span></span><span></span><span></span></div>
+                      <div class="mockup-url">viralengine.ai/dashboard</div>
+                    </div>
+                    <div class="mockup-content">
+                      <div class="mockup-stat-row">
+                        <div class="mockup-stat">
+                          <span class="ms-label">Active Flows</span>
+                          <span class="ms-value">24</span>
+                        </div>
+                        <div class="mockup-stat">
+                          <span class="ms-label">Resolved Today</span>
+                          <span class="ms-value accent">1,204</span>
+                        </div>
+                      </div>
+                      <div class="mockup-chart">
+                        <div class="mc-bar" style="height:40%"></div>
+                        <div class="mc-bar" style="height:65%"></div>
+                        <div class="mc-bar" style="height:50%"></div>
+                        <div class="mc-bar" style="height:80%"></div>
+                        <div class="mc-bar" style="height:70%"></div>
+                        <div class="mc-bar" style="height:90%"></div>
+                        <div class="mc-bar" style="height:75%"></div>
+                      </div>
+                      <div class="mockup-flow-row">
+                        <div class="flow-node fn-ai">AI Agent</div>
+                        <div class="flow-line"></div>
+                        <div class="flow-node fn-proc">Process</div>
+                        <div class="flow-line"></div>
+                        <div class="flow-node fn-done">✓ Done</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-card-name">AutoFlow Dashboard</h3>
+                <div class="work-card-tags">
+                  <span class="work-tag">AI Automation</span>
+                  <span class="work-tag">UX/UI</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Work Card 2 -->
+          <article class="work-card work-card--small" id="work-card-2">
+            <div class="work-card-inner">
+              <div class="work-card-visual wc-visual-2">
+                <div class="metrics-display">
+                  <div class="md-label">Efficiency Gained</div>
+                  <div class="md-value">+340<span>hrs/mo</span></div>
+                  <div class="md-sub">per developer</div>
+                  <div class="md-bar-wrap">
+                    <div class="md-bar-fill" style="width:82%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-card-name">EnterpriseAI Integration</h3>
+                <div class="work-card-tags">
+                  <span class="work-tag">Integration</span>
+                  <span class="work-tag">RAG</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Work Card 3 -->
+          <article class="work-card work-card--small" id="work-card-3">
+            <div class="work-card-inner">
+              <div class="work-card-visual wc-visual-3">
+                <div class="support-display">
+                  <div class="sd-ticket">
+                    <span class="sd-icon">📩</span>
+                    <div class="sd-text">
+                      <strong>Incoming Query</strong>
+                      <span>Unassigned</span>
+                    </div>
+                  </div>
+                  <div class="sd-arrow">↓</div>
+                  <div class="sd-ticket sd-resolved">
+                    <span class="sd-icon">✅</span>
+                    <div class="sd-text">
+                      <strong>Resolved</strong>
+                      <span class="accent">0.3s response</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-card-name">SupportBot AI</h3>
+                <div class="work-card-tags">
+                  <span class="work-tag">AI Agent</span>
+                  <span class="work-tag">Customer XP</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Work Card 4 -->
+          <article class="work-card work-card--medium" id="work-card-4">
+            <div class="work-card-inner">
+              <div class="work-card-visual wc-visual-4">
+                <div class="pipeline-display">
+                  <div class="pd-row">
+                    <div class="pd-node">Slack</div>
+                    <div class="pd-arrow">→</div>
+                    <div class="pd-node accent-node">AI Parse</div>
+                    <div class="pd-arrow">→</div>
+                    <div class="pd-node">Notion</div>
+                    <div class="pd-arrow">→</div>
+                    <div class="pd-node">Linear</div>
+                  </div>
+                  <div class="pd-stats">
+                    <div class="pd-stat"><span>2.5x</span> Velocity</div>
+                    <div class="pd-stat"><span>80%</span> Manual work reduced</div>
+                    <div class="pd-stat"><span>35%</span> Conversion rise</div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-info">
+                <h3 class="work-card-name">DataBridge Pipeline</h3>
+                <div class="work-card-tags">
+                  <span class="work-tag">Data Pipeline</span>
+                  <span class="work-tag">Integration</span>
+                  <span class="work-tag">Workflow</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / COLLABORATION SECTION ===== -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-text-col">
+          <span class="about-badge">Who We Are</span>
+          <h2 class="about-headline">LET'S MAKE<br><span class="about-accent">AWESOME</span><br>COLLABORATION</h2>
+          <p class="about-desc">The viralEngine studio specializes in creative AI design and development for businesses, offering services such as branding, UI/UX design, custom AI agents, and workflow automation development.</p>
+          <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-about-cta">Start a Project →</a>
+        </div>
+        <div class="about-visual-col" aria-hidden="true">
+          <div class="about-orb"></div>
+          <div class="about-stats-card">
+            <div class="asc-item">
+              <span class="asc-val">80%</span>
+              <span class="asc-label">Manual Work Reduced</span>
+            </div>
+            <div class="asc-item">
+              <span class="asc-val accent">2.5x</span>
+              <span class="asc-label">Response Velocity</span>
+            </div>
+            <div class="asc-item">
+              <span class="asc-val">35%</span>
+              <span class="asc-label">Conversion Rise</span>
+            </div>
+            <div class="asc-item">
+              <span class="asc-val accent">340h</span>
+              <span class="asc-label">Saved Monthly / Dev</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== DARK CTA SECTION ===== -->
+    <section class="dark-cta" id="cta">
+      <!-- Ticker running in background -->
+      <div class="cta-ticker" aria-hidden="true">
+        <div class="cta-ticker-inner">
+          <span>Build Request <span class="cta-star">✦</span></span>
+          <span>Contact Us <span class="cta-star">✦</span></span>
+          <span>AI Consultation <span class="cta-star">✦</span></span>
+          <span>Web Design <span class="cta-star">✦</span></span>
+          <span>Automation Build <span class="cta-star">✦</span></span>
+          <span>Build Request <span class="cta-star">✦</span></span>
+          <span>Contact Us <span class="cta-star">✦</span></span>
+          <span>AI Consultation <span class="cta-star">✦</span></span>
+          <span>Web Design <span class="cta-star">✦</span></span>
+          <span>Automation Build <span class="cta-star">✦</span></span>
+        </div>
+      </div>
+
+      <div class="container cta-inner">
+        <h2 class="cta-headline">LET'S WORK<br>TOGETHER</h2>
+        <div class="cta-visual" aria-hidden="true">
+          <div class="cta-orb-wrap">
+            <div class="cta-orb"></div>
+          </div>
+        </div>
+        <p class="cta-sub">Start your journey with us today. We're here to help bring your ideas to life.</p>
+        <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-cta-accent" id="btn-cta-main">
+          Book a Free Consultation
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- --- 8. FOOTER --- -->
-  <footer>
-    <div class="container footer-minimal">
-      <div class="logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.25rem;">
-          <path d="M4 4.5L12 20.5L20 4.5" stroke="url(#logo-grad-footer)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="logo-grad-footer" x1="4" y1="4.5" x2="20" y2="20.5" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7B61FF"/>
-              <stop offset="1" stop-color="#A855F7"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        viralEngine
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-links-col">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><a href="#home">Overview</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <a href="mailto:hello@viralengine.ai" class="footer-email" id="footer-email">Contact@viralEngine.ai</a>
+        </div>
       </div>
-      <p class="footer-description">Next-generation operational intelligence and AI agent architectures for modern high-performance teams.</p>
-      <p class="footer-copyright">&copy; 2026 viralEngine Inc. All rights reserved.</p>
+    </div>
+
+    <div class="footer-brand">
+      <span class="footer-brand-name">viralEngine<span class="footer-star">✦</span></span>
+      <div class="footer-bottom-row">
+        <span class="footer-copy">© 2026 viralEngine. All Rights Reserved.</span>
+        <a href="#home" class="footer-back-top" id="footer-back-top" aria-label="Back to top">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
