@@ -1406,8 +1406,10 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1.5px solid rgba(14,14,14,0.15);
+  border-top: 1.5px solid rgba(14, 14, 14, 0.15);
   padding-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer-copy {
@@ -1423,6 +1425,7 @@ button {
   align-items: center;
   gap: 0.4rem;
   transition: opacity 0.2s;
+  white-space: nowrap;
 }
 
 .footer-back-top:hover {
