@@ -822,6 +822,8 @@ button {
 .work-mockup {
   width: 100%;
   max-width: 480px;
+  display: flex;
+  flex-direction: column;
 }
 
 .mockup-screen {
@@ -829,6 +831,7 @@ button {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  width: 100%;
 }
 
 .mockup-bar {
@@ -864,41 +867,41 @@ button {
 }
 
 .mockup-content {
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .mockup-stat-row {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .mockup-stat {
   flex: 1;
   background: rgba(255,255,255,0.05);
   border-radius: 8px;
-  padding: 0.75rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.ms-label { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
-.ms-value { font-size: 1.2rem; font-weight: 700; color: #fff; }
+.ms-label { font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+.ms-value { font-size: 1rem; font-weight: 700; color: #fff; }
 .ms-value.accent { color: var(--c-accent); }
 
 .mockup-chart {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   align-items: flex-end;
-  height: 50px;
-  margin-bottom: 1rem;
+  height: 40px;
+  margin-bottom: 0.75rem;
 }
 
 .mc-bar {
   flex: 1;
   background: rgba(173, 255, 79, 0.3);
-  border-radius: 3px 3px 0 0;
+  border-radius: 2px 2px 0 0;
   transition: height 0.5s var(--ease-out);
 }
 
@@ -907,13 +910,13 @@ button {
 .mockup-flow-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .flow-node {
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
-  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
   font-weight: 600;
 }
 
