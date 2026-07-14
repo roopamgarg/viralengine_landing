@@ -1,5 +1,5 @@
 /**
- * viralEngine — landing interactions
+ * ViralEngine — landing interactions
  * Mobile nav, smooth anchors, scroll reveal
  */
 
