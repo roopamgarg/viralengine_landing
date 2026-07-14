@@ -1,5 +1,5 @@
 /**
- * viralEngine — Alden landing interactions
+ * viralEngine — Programa landing interactions
  * Mobile nav, smooth anchors, scroll reveal
  */
 
@@ -55,7 +55,7 @@ const init = () => {
       },
       {
         threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px',
+        rootMargin: '0px 0px -24px 0px',
       }
     );
 
@@ -72,7 +72,7 @@ const init = () => {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.pageYOffset - 16;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 64;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });
