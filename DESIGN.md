@@ -1,64 +1,49 @@
-# Alden — Style Reference
-> serene clinic on warm parchment — a page so quiet the single blue word and sage button feel like the only sound in the room
+# Programa — Style Reference
+> Swiss design studio at high noon. A white gallery wall lit by a single yellow desk lamp — everything is grayscale until a button, badge, or highlight demands attention, and then that one yellow note carries the whole room.
 
 **Theme:** light
 
-Alden operates on an editorial healthcare register: a near-white canvas warmed by a single cream parchment surface, deep near-black typography, and exactly two chromatic accents — a whisper-soft sky blue used like a highlighter on chosen words, and a muted sage green reserved for the primary action. The system is 98% achromatic and feels intentionally clinical-but-warm, closer to a premium health magazine than a SaaS dashboard. Type mixes a geometric sans for UI with a contemporary serif for the biggest headlines, tightened by consistently negative tracking so the type sits dense and confident rather than airy. Surfaces are flat with very soft card edges (16px), buttons are fully pill-shaped, and the only decorative motion is the subtle blue wash at section edges. An AI agent should treat color as punctuation, not decoration — silence is the default state.
+Programa operates in a Swiss-design vocabulary: near-pure white canvas, architectural sans-serif type at tightly tracked small-to-medium sizes, hairline borders, and a single saturated yellow-green accent that functions as a highlighter pen across an otherwise austere page. The entire palette is essentially four grays plus one chromatic signal — chromatic real estate is rationed, not distributed, so when yellow appears it reads as a switch flipped on. Components are slim and confident: 10px radii, thin 1px borders, generous white space, and zero shadow noise. The aesthetic is editorial-portfolio meets productivity tool — restrained enough to feel serious, bold enough to feel like a designer's tool.
 
 ## Tokens — Colors
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Parchment Cream | `#f3f1eb` | `--color-parchment-cream` | Alternate surface and product-mockup backdrop — the warm cream gives the white canvas a second, softer layer without introducing contrast noise |
-| Ink Black | `#28262a` | `--color-ink-black` | Primary headings, body text, and the heaviest borders — a near-black with the faintest plum undertone, softer than pure #000 for large blocks of text |
-| Graphite | `#4a4a4c` | `--color-graphite` | Secondary text, icon strokes, and lighter borders — the mid-neutral that separates captions from body without going to gray |
-| Paper White | `#ffffff` | `--color-paper-white` | Page canvas and card surfaces — the dominant background across the entire system |
-| Fog Border | `#dddcdd` | `--color-fog-border` | Hairline dividers, badge fills, and the softest UI separators |
-| Silver | `#cbcbcb` | `--color-silver` | Mid-weight dividers and de-emphasized body borders |
-| Sky Highlight | `#97cde5` | `--color-sky-highlight` | In-line accent on chosen words within headings, and soft card iconography — a dusty pastel blue that reads as annotation, never as brand chrome |
-| Sage Action | `#c8dfaa` | `--color-sage-action` | Primary CTA fill and decorative wash — the only saturated fill in the interface, used sparingly so the button always feels intentional |
+| Ink Black | `#1a1a1a` | `--color-ink-black` | Primary text, all borders, icon strokes, logo, divider lines, button outlines — the structural ink that defines every shape on the page |
+| Paper White | `#ffffff` | `--color-paper-white` | Page canvas, card surfaces, text on dark fills, input fields |
+| Fog Gray | `#f4f4f4` | `--color-fog-gray` | Soft section background, alternate surface, and quiet card fill |
+| Ash Gray | `#a3a3a3` | `--color-ash-gray` | Muted secondary text, inactive links, placeholder copy, tertiary metadata |
+| Highlighter Yellow | `#fbff2b` | `--color-highlighter-yellow` | Primary action background, focus highlights, tag fills — the single chromatic accent that makes interactive elements feel switched on against the monochrome system |
 
 ## Tokens — Typography
 
-### Stk bureau Sans Book Trial — Workhorse sans for body, nav, buttons, badges, cards, and most UI. Tight tracking (-0.02em at body, scaling to -0.04em at 56px) gives it a condensed, editorial density. Substitute: Inter or Söhne. · `--font-stk-bureau-sans-book-trial`
-- **Substitute:** Inter
-- **Weights:** 400, 500, 600
-- **Sizes:** 12, 14, 16, 18, 24, 30, 32, 40, 48, 56
-- **Line height:** 1.00–1.50
-- **Letter spacing:** -0.04em at 56px, -0.03em at 40px, -0.02em at 16px, 0.02em at 12px (badges)
-- **Role:** Workhorse sans for body, nav, buttons, badges, cards, and most UI. Tight tracking (-0.02em at body, scaling to -0.04em at 56px) gives it a condensed, editorial density. Substitute: Inter or Söhne.
-
-### Stk bureau Serif Book Trial — Display serif reserved for the largest editorial statements — the About headline and pull quotes. The 258px instance is a single oversized decorative mark, not a functional type size. Bring it in to add gravity to section openers; never use it in UI. Substitute: Source Serif 4 or Lora. · `--font-stk-bureau-serif-book-trial`
-- **Substitute:** Source Serif 4
+### Neue Haas Grotesk Text — The single typeface carries every voice on the site — nav, body, headings, buttons, inputs. Weight 400 is the default for body and nav; weight 500 is reserved for emphasized inline labels (e.g. 'Last Updated:') and section opens. The choice of a neo-grotesque with consistent -0.03em tracking at every size creates optical tightness even at 42px, avoiding the airy looseness most sans-serifs default to. This is a Swiss-tool typeface, not a personality typeface — restraint is the signature. · `--font-neue-haas-grotesk-text`
+- **Substitute:** Inter, Neue Haas Grotesk Display Pro (if available), or Helvetica Neue
 - **Weights:** 400, 500
-- **Sizes:** 24, 40, 48, 56, 258
-- **Line height:** 1.00, 1.20, 1.40
-- **Letter spacing:** -0.04em at 48–56px, -0.02em at 24px
-- **Role:** Display serif reserved for the largest editorial statements — the About headline and pull quotes. The 258px instance is a single oversized decorative mark, not a functional type size. Bring it in to add gravity to section openers; never use it in UI. Substitute: Source Serif 4 or Lora.
+- **Sizes:** 14px, 16px, 17px, 20px, 24px, 42px
+- **Line height:** 1.10 (display), 1.20 (headings), 1.40 (body)
+- **Letter spacing:** -0.03em at all sizes (approximately -0.42px at 14px, -0.48px at 16px, -0.51px at 17px, -0.6px at 20px, -0.72px at 24px, -1.26px at 42px)
+- **Role:** The single typeface carries every voice on the site — nav, body, headings, buttons, inputs. Weight 400 is the default for body and nav; weight 500 is reserved for emphasized inline labels (e.g. 'Last Updated:') and section opens. The choice of a neo-grotesque with consistent -0.03em tracking at every size creates optical tightness even at 42px, avoiding the airy looseness most sans-serifs default to. This is a Swiss-tool typeface, not a personality typeface — restraint is the signature.
 
-### Inter — Inter — detected in extracted data but not described by AI · `--font-inter`
+### neue-haas-grotesk-text — neue-haas-grotesk-text — detected in extracted data but not described by AI · `--font-neue-haas-grotesk-text`
 - **Weights:** 400
-- **Sizes:** 32px, 40px
-- **Line height:** 1.2, 1.3
-- **Letter spacing:** -0.02
-- **Role:** Inter — detected in extracted data but not described by AI
+- **Sizes:** 20px
+- **Line height:** 1.4
+- **Role:** neue-haas-grotesk-text — detected in extracted data but not described by AI
 
 ### Type Scale
 
 | Role | Size | Line Height | Letter Spacing | Token |
 |------|------|-------------|----------------|-------|
-| caption | 12px | 1.2 | 0.24px | `--text-caption` |
-| body-sm | 14px | 1.5 | -0.28px | `--text-body-sm` |
-| body | 16px | 1.5 | -0.32px | `--text-body` |
-| subheading | 18px | 1.4 | -0.36px | `--text-subheading` |
-| heading-sm | 24px | 1.3 | -0.48px | `--text-heading-sm` |
-| heading | 32px | 1.2 | -0.64px | `--text-heading` |
-| heading-lg | 48px | 1.2 | -1.44px | `--text-heading-lg` |
-| display | 56px | 1 | -2.24px | `--text-display` |
+| caption | 14px | 1.4 | -0.42px | `--text-caption` |
+| body-sm | 16px | 1.4 | -0.48px | `--text-body-sm` |
+| subheading | 20px | 1.4 | -0.6px | `--text-subheading` |
+| heading-sm | 24px | 1.2 | -0.72px | `--text-heading-sm` |
+| heading | 42px | 1.1 | -1.26px | `--text-heading` |
 
 ## Tokens — Spacing & Shapes
 
-**Base unit:** 8px
+**Base unit:** 6px
 
 **Density:** comfortable
 
@@ -66,167 +51,150 @@ Alden operates on an editorial healthcare register: a near-white canvas warmed b
 
 | Name | Value | Token |
 |------|-------|-------|
-| 8 | 8px | `--spacing-8` |
-| 16 | 16px | `--spacing-16` |
+| 6 | 6px | `--spacing-6` |
+| 12 | 12px | `--spacing-12` |
 | 24 | 24px | `--spacing-24` |
-| 32 | 32px | `--spacing-32` |
-| 40 | 40px | `--spacing-40` |
+| 36 | 36px | `--spacing-36` |
 | 48 | 48px | `--spacing-48` |
-| 64 | 64px | `--spacing-64` |
-| 80 | 80px | `--spacing-80` |
-| 112 | 112px | `--spacing-112` |
+| 96 | 96px | `--spacing-96` |
 
 ### Border Radius
 
 | Element | Value |
 |---------|-------|
+| nav | 10px |
 | cards | 16px |
-| badges | 30px |
-| images | 24px |
-| buttons | 100px |
-| smallUI | 4px |
+| inputs | 10px |
+| buttons | 10px |
 
 ### Layout
 
 - **Page max-width:** 1200px
-- **Section gap:** 80px
-- **Card padding:** 40px
-- **Element gap:** 16px
+- **Section gap:** 96px
+- **Card padding:** 16px
+- **Element gap:** 12px
 
 ## Components
 
-### Pill Primary Button
-**Role:** Main conversion action — the only saturated filled button in the system
-
-Sage green fill (#c8dfaa), Ink Black text (#28262a), 100px border-radius, 12px vertical / 20px horizontal padding, Stk bureau Sans 16px / 500. No border, no shadow. Sits quiet against the white canvas — the color does the work, not the container.
-
-### Ghost Navigation Link
-**Role:** Top-nav and footer text links
-
-No background, no border, Ink Black text (#28262a) at 14–16px / 400, 8px vertical / 12px horizontal hit area. No underline; active state uses the same color with weight 500.
-
-### Hero Display Headline
-**Role:** Above-the-fold statement on every primary page
-
-Stk bureau Sans 48–56px / 400, Ink Black (#28262a), line-height 1.00, letter-spacing -1.44 to -2.24px. One phrase is swapped to Sky Highlight (#97cde5) to act as inline annotation. Centered on white canvas with the paragraph beneath at 18px.
-
-### Editorial Section Headline
-**Role:** Large body-section openers in the About and feature sections
-
-Stk bureau Serif 40–56px / 400, Ink Black (#28262a), line-height 1.20, letter-spacing -1.44 to -2.24px, centered. One or two inline words re-colored to Sky Highlight (#97cde5) for emphasis.
-
-### Cream Product Stage
-**Role:** Container that presents UI mockups and screenshots
-
-Parchment Cream (#f3f1eb) background, 24px corner radius on inner device frames, generous 40–48px internal padding. No shadow — the contrast between the white canvas and cream stage is the only elevation cue.
-
-### Feature Card
-**Role:** Content card on cream or white surfaces
-
-White (#ffffff) fill, 16px border-radius, 1px Fog Border (#dddcdd) or no border at all, 40px padding. Headings 24px / 500 Ink Black, body 16px Graphite (#4a4a4c). No shadow, no hover lift.
-
-### Pill Badge
-**Role:** Category labels, status tags, inline annotations
-
-Fog Border (#dddcdd) fill or Sky Highlight (#97cde5) fill for accent variants, Ink Black or white text, 30–50px border-radius, 8px vertical / 16px horizontal padding, Stk bureau Sans 12px / 500 with +0.24px tracking.
-
-### Logo Strip
-**Role:** Social proof band of partner / investor marks
-
-Single horizontal row, 16px row-gap, all logos rendered monochrome (#28262a) on white. No card frame, no divider — spacing is the only separator.
-
-### Quote Block
-**Role:** Testimonial or pull-quote section
-
-Stk bureau Serif 24–32px / 400, Ink Black, centered, with a single highlighted phrase in Sky Highlight. Attributor block beneath: 40px avatar, 14px name in 500, 12px role in Graphite. Subtle blue gradient wash anchored bottom-right.
-
-### Decorative Blue Wash
-**Role:** Atmospheric accent at section corners
-
-Soft radial or linear gradient from Sky Highlight (#97cde5) at low opacity fading to transparent. Anchored at the bottom-right of testimonial sections. Never used as a background fill — only as edge atmosphere.
-
 ### Top Navigation Bar
-**Role:** Persistent site header
+**Role:** Sticky-style header anchoring page identity and primary destinations
 
-White (#ffffff) background, 16px vertical padding, logo left (Alden wordmark in Ink Black 18px / 500), nav links right at 14px / 400 with 32px gaps. 'Get Started' is a Sage Action pill button. No shadow, no border-bottom.
+White background, no border-bottom. Left: geometric two-diamond logo (Ink Black) + 'Programa' wordmark at 16-20px weight 400. Center: nav links (Product, Customers, Pricing, Learn) at 16px weight 400, Ink Black, 24px horizontal spacing. Right: 'Log in' as a text link in Ink Black, then a Primary CTA Button. Height feels ~64px with generous horizontal padding.
 
-### Avatar Stack
-**Role:** Small group of headshots used as social proof or team accents
+### Primary CTA Button
+**Role:** The single high-emphasis action on any screen
 
-Circular 40px avatars with 1px Fog Border ring, overlapping 8–12px, arranged loosely around section openers. No labels.
+Highlighter Yellow (#fbff2b) fill, 1px Ink Black (#1a1a1a) border, 10px border-radius, 8px vertical / 12px horizontal padding. Label in Neue Haas Grotesk Text 16px weight 400, Ink Black. 12px gap between sibling buttons. The 1px black outline around a yellow fill gives the button a hand-stamped, sticker-like quality — it's the only place a border reinforces rather than contains.
+
+### Ghost Text Button
+**Role:** Secondary, low-emphasis action paired with the primary CTA
+
+No fill, no border. Label in Neue Haas Grotesk Text 16px weight 400, Ink Black. Sits to the left of the Primary CTA. Vertically aligned to the same baseline as the CTA.
+
+### Page Heading
+**Role:** Hero heading for content pages
+
+Neue Haas Grotesk Text 42px weight 500, Ink Black, line-height 1.10, letter-spacing -1.26px. Left-aligned with 111px left margin. No subtitle, no eyebrow — the heading stands alone.
+
+### Info Banner
+**Role:** Metadata callout (e.g. 'Last Updated') below the page heading
+
+Fog Gray (#f4f4f4) fill, no border, 16px border-radius. Padding ~12px vertical / 16px horizontal. Content is a label-value pair: bold label ('Last Updated:') in Ink Black weight 500, followed by value in Ink Black weight 400, both at 16px.
+
+### Numbered Section Block
+**Role:** Ordered content list with bold lead-in label
+
+Decimal number (1., 2., …) flush left at 16px Ink Black weight 400. Indented label (e.g. 'Purpose and Scope') in 16px weight 500 Ink Black. Body paragraphs in 16-17px weight 400 Ink Black at line-height 1.4. Vertical gap between sections: 8px. The bold label + paragraph pattern is a signature — it's the page's only typographic hierarchy device.
+
+### Logo Lockup
+**Role:** Brand mark + wordmark for header and footer
+
+Two stacked diamond/parallelogram shapes in Ink Black, approximately 24x24px, followed by 'Programa' wordmark in Neue Haas Grotesk Text 20px weight 400, Ink Black, letter-spacing -0.6px. 8px gap between icon and wordmark.
+
+### Form Input
+**Role:** Text entry field
+
+1px Ink Black border, 10px border-radius, 6px vertical / 12px horizontal padding. Placeholder text in Ash Gray (#a3a3a3) at 16px. White fill. On focus: border remains Ink Black (no color shift) — the focus state is communicated through weight or ring, not hue.
+
+### Nav Link
+**Role:** Top-level navigation destination
+
+Neue Haas Grotesk Text 16px weight 400, Ink Black, no underline, no color shift on hover visible in data. 24px horizontal spacing between links. 4px column gap from the wordmark.
+
+### Footer Link
+**Role:** Secondary navigation in footer
+
+Neue Haas Grotesk Text 14-16px weight 400, Ink Black, muted compared to nav. Typically arranged in columns with 8-12px vertical gap between links.
 
 ## Do's and Don'ts
 
 ### Do
-- Keep the canvas 98% achromatic — let Sky Highlight and Sage Action be the only chromatic pixels in any viewport.
-- Use Stk bureau Sans for everything functional and switch to Stk bureau Serif only at 40px and above for editorial gravity.
-- Tighten tracking aggressively: -0.04em at 56px, -0.02em at 16px. Negative letter-spacing is the system's signature.
-- Use Sky Highlight (#97cde5) on individual words inside headings, not on full lines, never on backgrounds.
-- Reach for 100px border-radius on every button and badge — the pill shape is non-negotiable for brand consistency.
-- Use Parchment Cream (#f3f1eb) as a second surface, not as a background tint — full bands or full containers, never partial fills.
-- Separate layers with contrast between white and cream rather than with shadows or borders.
+- Use #fbff2b fill with 1px #1a1a1a border exclusively for the single primary action per screen — never use the yellow as a background for large surfaces or decorative blocks.
+- Set all text at -0.03em letter-spacing using the Neue Haas Grotesk Text scale (14/16/17/20/24/42px) — do not introduce a second typeface or loosen tracking at display sizes.
+- Apply 10px border-radius to buttons, nav elements, and inputs; reserve 16px for larger card surfaces and info banners.
+- Build vertical rhythm on the 6px base unit: 8px between list items, 12px for element gaps, 16px for card padding, 48-96px for section separation.
+- Use #f4f4f4 as the only mid-surface between white and the yellow accent — never introduce additional gray tints or gradient washes.
+- Keep page layout centered with a 1200px max-width and 111px left margin for content blocks; let white space carry the visual weight.
+- Communicate hierarchy through weight (400 vs 500), not color or size variation — the system has exactly two weights and a tight type scale.
 
 ### Don't
-- Don't introduce a new accent color — the system is intentionally limited to sky blue and sage green.
-- Don't add box-shadows. Elevation comes from the white-to-cream surface contrast, not depth.
-- Don't use 24px border-radius on buttons — buttons are always fully pill-shaped at 100px.
-- Don't apply Sky Highlight to body paragraphs or backgrounds — it is an in-heading annotation only.
-- Don't use Inter or system fonts as the default; always load the Stk bureau (or its Inter/Source Serif substitutes) to preserve the editorial register.
-- Don't center product screenshots on pure white — always stage them on Parchment Cream so the device frame reads as object, not page.
-- Don't use serif for UI chrome (nav, buttons, badges, form fields) — serif is display-only.
+- Don't introduce drop shadows, glow effects, or blur — elevation is flat and border-defined.
+- Don't use #fbff2b on more than one element per viewport — its power comes from scarcity.
+- Don't add a second accent color; the palette is monochrome + one yellow-green signal.
+- Don't use Ash Gray (#a3a3a3) for body copy — it's a 2.5:1 contrast fail on white; reserve it for placeholders and inactive metadata only.
+- Don't increase border-radius above 16px — the slightly squared geometry is part of the identity.
+- Don't break the 6px spacing grid with arbitrary pixel values; every gap should be a multiple of 6.
+- Don't add a subtitle or eyebrow text above page headings — the 42px heading stands alone.
 
 ## Surfaces
 
 | Level | Name | Value | Purpose |
 |-------|------|-------|---------|
-| 1 | Page Canvas | `#ffffff` | Default page background and primary reading surface |
-| 2 | Parchment Band | `#f3f1eb` | Warm cream section backdrop and product-mockup stage |
-| 3 | Card Surface | `#ffffff` | Elevated cards and inner panels on top of either canvas or parchment |
-| 4 | Accent Wash | `#c8dfaa` | Sparingly used decorative highlight, usually behind a CTA or as section edge wash |
+| 0 | Canvas | `#ffffff` | Page background — the dominant surface |
+| 1 | Fog Card | `#f4f4f4` | Soft info banners and elevated callouts that recede without a border |
+| 2 | Accent Fill | `#fbff2b` | Highlight wash on primary action surfaces |
 
 ## Elevation
 
-Alden deliberately avoids box-shadows. Elevation is communicated entirely through surface contrast: white cards on a cream band, or cream bands on a white canvas. The only structural line in the system is a 1px #dddcdd hairline, used sparingly. This produces a flat, editorial-documentary feel where hierarchy comes from typography scale and surface tone, not depth.
+Programa deliberately avoids box-shadows. Elevation is communicated through surface color shifts (white → fog gray) and the 1px ink-black border, not through drop shadows. This keeps the system flat and architectural — the Swiss-design tradition where lines define form, not light.
 
 ## Imagery
 
-Imagery is almost entirely product UI mockups staged on the Parchment Cream surface — no lifestyle photography, no abstract illustration, no 3D. The hero centers a three-panel scheduling/voice agent mockup rendered as clean white cards on cream. People appear only as small circular avatar crops (40px) scattered around section openers, used as human punctuation rather than portraiture. A soft blue atmospheric wash anchors the bottom-right of the testimonial section. Iconography is mono-stroke in Ink Black, consistent 1.5px weight, drawn geometric rather than rounded. The overall visual register is editorial-documentary: the product UI is the hero, avatars are proof of people, and the blue wash is the only decorative element.
+Pure UI with no photography or illustration on this page — the visual language is typographic and structural. Logo is the only graphic mark, rendered as two solid Ink Black geometric shapes (diamond/parallelogram forms). The highlighter-yellow CTA is itself a visual element: a stamped sticker on the white canvas. No icons, no avatars, no product screenshots on the Acceptable Use Policy page. When imagery does appear elsewhere, expect it to be contained within sharp or slightly rounded crops, full-bleed product photography on pure white, and monochromatic or single-accent treatment consistent with the palette.
 
 ## Layout
 
-Page is max-width ~1200px centered, but hero and product-stage sections break to full-bleed white-to-cream bands. Hero pattern is a centered headline-over-canvas with the product mockup staged on a cream band beneath. Section rhythm alternates: white canvas → cream product stage → white canvas with centered editorial headline → cream band with logo strip. Content arrangement is almost entirely centered stacks, never left-aligned text-with-side-image. The avatar accents break the symmetry by floating loosely around headlines, creating intentional negative space. The navigation is a minimal top bar with logo left and three links plus a pill CTA right; no sticky behavior, no mega-menu. Card grids are not used — the system prefers vertical centered stacks over multi-column feature grids.
+Centered max-width layout (~1200px) with generous side margins (111px+). The header is a flat white bar with no border, logo left, centered nav cluster, auth actions right. Content pages lead with a single large 42px left-aligned heading, followed by a full-width Fog Gray info banner, then a vertically stacked numbered content list that uses bold lead-in labels + paragraphs. Section separation is 48-96px vertical padding. No alternating bands, no sidebar, no grid cards on content pages — the rhythm is a single column of breathing white space punctuated by sparse structural elements.
 
 ## Agent Prompt Guide
 
-## Quick Color Reference
-- text: #28262a (Ink Black)
-- background: #ffffff (Paper White)
-- border: #dddcdd (Fog Border)
-- accent: #97cde5 (Sky Highlight) — in-heading word annotation only
-- primary action: #c8dfaa (filled action)
-- alternate surface: #f3f1eb (Parchment Cream)
+Quick Color Reference:
+- text: #1a1a1a
+- background: #ffffff
+- surface: #f4f4f4
+- border: #1a1a1a
+- muted text: #a3a3a3
+- primary action: #fbff2b (filled action)
 
-## Example Component Prompts
-1. **Hero Headline**: Center on white canvas. 56px Stk bureau Sans weight 400, #28262a, letter-spacing -2.24px, line-height 1.00. Wrap the phrase 'Home Healthcare' in a span with color #97cde5. Subline at 18px / 400 / #4a4a4c, 24px below.
+Example Component Prompts:
 
-2. **Pill CTA Button**: Background #c8dfaa, text #28262a, 100px border-radius, 12px vertical / 20px horizontal padding, 16px Stk bureau Sans weight 500, no border, no shadow. Place 24px below the subline.
+1. Create a Primary Action Button: #fbff2b background, #1a1a1a text, 9999px radius, compact pill padding. Use this filled treatment for the main CTA.
 
-3. **Cream Product Stage**: Full-bleed #f3f1eb band, 80px vertical padding. Inside, a 24px-radius frame holding white (#ffffff) UI cards with 16px radius, 1px #dddcdd border, 40px padding. Stage width max 1100px centered.
+2. Create a page heading block: 42px Neue Haas Grotesk Text weight 500 #1a1a1a, line-height 1.10, letter-spacing -1.26px, left-aligned with 111px left margin. Below it, an info banner: #f4f4f4 fill, 16px radius, 12px 16px padding, containing 'Last Updated:' in 16px weight 500 #1a1a1a followed by 'January 1, 2026' in 16px weight 400 #1a1a1a.
 
-4. **Editorial Section Headline**: 48px Stk bureau Serif weight 400, #28262a, line-height 1.20, letter-spacing -1.44px, centered on white canvas. Color the word 'healthcare' #97cde5.
+3. Create a numbered content section: decimal number '1.' in 16px weight 400 #1a1a1a flush left, then a bold lead-in label in 16px weight 500 #1a1a1a, then a body paragraph in 17px weight 400 #1a1a1a at line-height 1.40. 8px vertical gap to the next section.
 
-5. **Pill Badge**: 30px border-radius, 8px vertical / 16px horizontal padding, #dddcdd background, 12px Stk bureau Sans weight 500, #28262a text, letter-spacing 0.24px.
+4. Create a form input: 1px #1a1a1a border, 10px radius, #ffffff fill, 6px 12px padding. Placeholder 'Enter your email' in 16px #a3a3a3. Label above in 14px weight 500 #1a1a1a with 8px bottom margin.
 
-## Surface & Contrast Logic
-
-The system uses exactly two surfaces: #ffffff (Paper White) for the default reading canvas and #f3f1eb (Parchment Cream) as a second, warmer stage. Cards on either surface are always #ffffff themselves, so the card edge reads against the surrounding tone rather than via border or shadow. This white-on-white-on-cream layering is the only elevation language in the system. Sage Action (#c8dfaa) and Sky Highlight (#97cde5) are functional paints, not surface tones — they never appear as full backgrounds, only as button fills, in-heading word annotations, and edge washes.
+5. Create a secondary card surface: #f4f4f4 fill, 16px border-radius, 24px padding, no border, no shadow. Heading inside in 20px weight 500 #1a1a1a, body in 16px weight 400 #1a1a1a, 12px gap between heading and body.
 
 ## Similar Brands
 
-- **Linear** — Same near-monochrome discipline with a single muted accent and pill-shaped CTAs, though Linear skews dark where Alden is editorial-light.
-- **Stripe** — Equally restrained palette, centered hero, editorial serif/sans pairing, and the practice of using a single soft color as inline emphasis inside otherwise black headlines.
-- **Anthropic** — Comfortable spacing, near-white canvas, pill primary buttons, and the same confidence of letting the product mockup do the visual work while chrome stays nearly invisible.
-- **Aesop** — Cream-and-ink palette, serif display headlines, near-zero decorative chrome — the same editorial-documentary register applied to a different industry.
+- **Linear** — Same near-monochrome palette with a single saturated accent (Linear's purple), tight typographic system, and minimal-border component geometry
+- **Figma Config** — Same Swiss-design restraint with hairline borders, generous white space, and a single chromatic accent used sparingly for primary actions
+- **Notion** — Similar flat-no-shadow component language, 10px-ish radii, and a neutral-first palette where one accent color carries the brand
+- **Vercel** — Same editorial minimalism with monochrome canvas, tight tracking on a neo-grotesque typeface, and accent color rationed to CTAs only
+- **Are.na** — Same white-canvas-plus-muted-neutral aesthetic with type-driven hierarchy and zero decorative chrome
 
 ## Quick Start
 
@@ -235,90 +203,65 @@ The system uses exactly two surfaces: #ffffff (Paper White) for the default read
 ```css
 :root {
   /* Colors */
-  --color-parchment-cream: #f3f1eb;
-  --color-ink-black: #28262a;
-  --color-graphite: #4a4a4c;
+  --color-ink-black: #1a1a1a;
   --color-paper-white: #ffffff;
-  --color-fog-border: #dddcdd;
-  --color-silver: #cbcbcb;
-  --color-sky-highlight: #97cde5;
-  --color-sage-action: #c8dfaa;
+  --color-fog-gray: #f4f4f4;
+  --color-ash-gray: #a3a3a3;
+  --color-highlighter-yellow: #fbff2b;
 
   /* Typography — Font Families */
-  --font-stk-bureau-sans-book-trial: 'Stk bureau Sans Book Trial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-stk-bureau-serif-book-trial: 'Stk bureau Serif Book Trial', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-neue-haas-grotesk-text: 'Neue Haas Grotesk Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
-  --text-caption: 12px;
-  --leading-caption: 1.2;
-  --tracking-caption: 0.24px;
-  --text-body-sm: 14px;
-  --leading-body-sm: 1.5;
-  --tracking-body-sm: -0.28px;
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --tracking-body: -0.32px;
-  --text-subheading: 18px;
+  --text-caption: 14px;
+  --leading-caption: 1.4;
+  --tracking-caption: -0.42px;
+  --text-body-sm: 16px;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: -0.48px;
+  --text-subheading: 20px;
   --leading-subheading: 1.4;
-  --tracking-subheading: -0.36px;
+  --tracking-subheading: -0.6px;
   --text-heading-sm: 24px;
-  --leading-heading-sm: 1.3;
-  --tracking-heading-sm: -0.48px;
-  --text-heading: 32px;
-  --leading-heading: 1.2;
-  --tracking-heading: -0.64px;
-  --text-heading-lg: 48px;
-  --leading-heading-lg: 1.2;
-  --tracking-heading-lg: -1.44px;
-  --text-display: 56px;
-  --leading-display: 1;
-  --tracking-display: -2.24px;
+  --leading-heading-sm: 1.2;
+  --tracking-heading-sm: -0.72px;
+  --text-heading: 42px;
+  --leading-heading: 1.1;
+  --tracking-heading: -1.26px;
 
   /* Typography — Weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
-  --font-weight-semibold: 600;
 
   /* Spacing */
-  --spacing-unit: 8px;
-  --spacing-8: 8px;
-  --spacing-16: 16px;
+  --spacing-unit: 6px;
+  --spacing-6: 6px;
+  --spacing-12: 12px;
   --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
+  --spacing-36: 36px;
   --spacing-48: 48px;
-  --spacing-64: 64px;
-  --spacing-80: 80px;
-  --spacing-112: 112px;
+  --spacing-96: 96px;
 
   /* Layout */
   --page-max-width: 1200px;
-  --section-gap: 80px;
-  --card-padding: 40px;
-  --element-gap: 16px;
+  --section-gap: 96px;
+  --card-padding: 16px;
+  --element-gap: 12px;
 
   /* Border Radius */
-  --radius-md: 4px;
+  --radius-lg: 10px;
   --radius-2xl: 16px;
-  --radius-2xl-2: 20px;
-  --radius-3xl: 24px;
-  --radius-3xl-2: 30px;
-  --radius-full: 50px;
-  --radius-full-2: 100px;
 
   /* Named Radii */
+  --radius-nav: 10px;
   --radius-cards: 16px;
-  --radius-badges: 30px;
-  --radius-images: 24px;
-  --radius-buttons: 100px;
-  --radius-smallui: 4px;
+  --radius-inputs: 10px;
+  --radius-buttons: 10px;
 
   /* Surfaces */
-  --surface-page-canvas: #ffffff;
-  --surface-parchment-band: #f3f1eb;
-  --surface-card-surface: #ffffff;
-  --surface-accent-wash: #c8dfaa;
+  --surface-canvas: #ffffff;
+  --surface-fog-card: #f4f4f4;
+  --surface-accent-fill: #fbff2b;
 }
 ```
 
@@ -327,64 +270,42 @@ The system uses exactly two surfaces: #ffffff (Paper White) for the default read
 ```css
 @theme {
   /* Colors */
-  --color-parchment-cream: #f3f1eb;
-  --color-ink-black: #28262a;
-  --color-graphite: #4a4a4c;
+  --color-ink-black: #1a1a1a;
   --color-paper-white: #ffffff;
-  --color-fog-border: #dddcdd;
-  --color-silver: #cbcbcb;
-  --color-sky-highlight: #97cde5;
-  --color-sage-action: #c8dfaa;
+  --color-fog-gray: #f4f4f4;
+  --color-ash-gray: #a3a3a3;
+  --color-highlighter-yellow: #fbff2b;
 
   /* Typography */
-  --font-stk-bureau-sans-book-trial: 'Stk bureau Sans Book Trial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-stk-bureau-serif-book-trial: 'Stk bureau Serif Book Trial', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-neue-haas-grotesk-text: 'Neue Haas Grotesk Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography — Scale */
-  --text-caption: 12px;
-  --leading-caption: 1.2;
-  --tracking-caption: 0.24px;
-  --text-body-sm: 14px;
-  --leading-body-sm: 1.5;
-  --tracking-body-sm: -0.28px;
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --tracking-body: -0.32px;
-  --text-subheading: 18px;
+  --text-caption: 14px;
+  --leading-caption: 1.4;
+  --tracking-caption: -0.42px;
+  --text-body-sm: 16px;
+  --leading-body-sm: 1.4;
+  --tracking-body-sm: -0.48px;
+  --text-subheading: 20px;
   --leading-subheading: 1.4;
-  --tracking-subheading: -0.36px;
+  --tracking-subheading: -0.6px;
   --text-heading-sm: 24px;
-  --leading-heading-sm: 1.3;
-  --tracking-heading-sm: -0.48px;
-  --text-heading: 32px;
-  --leading-heading: 1.2;
-  --tracking-heading: -0.64px;
-  --text-heading-lg: 48px;
-  --leading-heading-lg: 1.2;
-  --tracking-heading-lg: -1.44px;
-  --text-display: 56px;
-  --leading-display: 1;
-  --tracking-display: -2.24px;
+  --leading-heading-sm: 1.2;
+  --tracking-heading-sm: -0.72px;
+  --text-heading: 42px;
+  --leading-heading: 1.1;
+  --tracking-heading: -1.26px;
 
   /* Spacing */
-  --spacing-8: 8px;
-  --spacing-16: 16px;
+  --spacing-6: 6px;
+  --spacing-12: 12px;
   --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
+  --spacing-36: 36px;
   --spacing-48: 48px;
-  --spacing-64: 64px;
-  --spacing-80: 80px;
-  --spacing-112: 112px;
+  --spacing-96: 96px;
 
   /* Border Radius */
-  --radius-md: 4px;
+  --radius-lg: 10px;
   --radius-2xl: 16px;
-  --radius-2xl-2: 20px;
-  --radius-3xl: 24px;
-  --radius-3xl-2: 30px;
-  --radius-full: 50px;
-  --radius-full-2: 100px;
 }
 ```
