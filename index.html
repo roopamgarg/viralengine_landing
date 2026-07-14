@@ -12,17 +12,34 @@
   <meta property="og:description" content="Operate with the speed of a team ten times your size. AI agents that automate agency ops so your people focus on strategy and creative.">
   <meta property="og:type" content="website">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+  <div class="sketch-bg" aria-hidden="true">
+    <svg class="sketch sketch--tl" viewBox="0 0 200 200" fill="none">
+      <path d="M20 40c40-20 80 10 60 50s-70 30-40 70" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="140" cy="50" r="18" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M150 120l30 40M180 120l-30 40" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+    <svg class="sketch sketch--br" viewBox="0 0 220 180" fill="none">
+      <path d="M10 90c30-50 90-60 120-20s40 90-20 100" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="140" y="20" width="50" height="50" rx="4" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M40 140h40M40 155h70" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </div>
 
   <header class="nav" id="main-header">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo logo-lockup logo-lockup--nav" id="nav-logo" aria-label="viralEngine Home">
-        <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 1.5L17.5 7L12 12.5L6.5 7Z" fill="currentColor"/>
-          <path d="M12 11.5L17.5 17L12 22.5L6.5 17Z" fill="currentColor"/>
-        </svg>
+    <div class="nav-shell">
+      <a href="#home" class="nav-logo" id="nav-logo" aria-label="viralEngine Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M12 1.5L17.5 7L12 12.5L6.5 7Z" fill="currentColor"/>
+            <path d="M12 11.5L17.5 17L12 22.5L6.5 17Z" fill="currentColor"/>
+          </svg>
+        </span>
         <span class="logo-wordmark">viralEngine</span>
       </a>
 
@@ -30,17 +47,18 @@
         <ul class="nav-links" id="nav-menu">
           <li><a href="#product" id="link-product">Product</a></li>
           <li><a href="#agents" id="link-agents">Agents</a></li>
-          <li><a href="#process" id="link-process">Process</a></li>
-          <li><a href="#about" id="link-about">About</a></li>
+          <li><a href="#integrations" id="link-integrations">Integrations</a></li>
+          <li><a href="#process" id="link-process">How it works</a></li>
           <li class="nav-mobile-cta">
-            <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-nav-cta-mobile">Get started</a>
+            <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary btn-primary--compact" id="btn-nav-cta-mobile">→ Get started</a>
           </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="btn-nav-cta">Get started</a>
-        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <a href="mailto:hello@viralengine.ai" class="btn-outline" id="btn-nav-contact">Contact</a>
+        <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary btn-primary--compact" id="btn-nav-cta">→ Get started</a>
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" type="button">
           <span></span>
           <span></span>
         </button>
@@ -49,143 +67,176 @@
   </header>
 
   <main>
-    <!-- Hero + product (Programa homepage composition) -->
+    <!-- Hero -->
     <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="hero-brand logo-lockup" aria-label="viralEngine">
-          <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 1.5L17.5 7L12 12.5L6.5 7Z" fill="currentColor"/>
-            <path d="M12 11.5L17.5 17L12 22.5L6.5 17Z" fill="currentColor"/>
-          </svg>
-          <span class="logo-wordmark">viralEngine</span>
+      <div class="hero-inner">
+        <p class="tagline-badge">
+          <span class="tagline-badge__icon" aria-hidden="true">✦</span>
+          AI ops for influencer agencies
         </p>
-        <h1 class="hero-headline">
-          Run more campaigns. Not more busywork.
+
+        <h1 class="display-headline">
+          Run more <span class="highlight">campaigns</span>.<br>
+          Not more busywork.
         </h1>
+
         <p class="hero-sub">
-          AI agents that automate influencer agency operations — so your team spends time on strategy and creative, not spreadsheets.
+          viralEngine turns discovery, contracts, reporting, and payment follow-ups into AI agents — so your team spends time on strategy and creative, not spreadsheets.
         </p>
-        <div class="cta-row">
+
+        <div class="cta-stack">
           <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-hero-cta">
-            Get started
+            → Book a walkthrough
           </a>
-          <a href="#product" class="btn-secondary" id="btn-hero-secondary">
-            See the product
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-product" id="product" aria-label="Product overview">
-        <div class="stage-frame">
-          <div class="stage-header">
-            <h2 class="stage-title">Agency operations workspace</h2>
-            <span class="stage-meta">Live agents</span>
-          </div>
-
-          <div class="stage-panels">
-            <div class="stage-panel">
-              <div class="panel-label">Agent library</div>
-              <div class="agent-row">
-                <span class="agent-row-name">Creator Discovery Agent</span>
-                <span class="agent-row-status">Running</span>
-              </div>
-              <div class="agent-row">
-                <span class="agent-row-name">Contract Intelligence Agent</span>
-                <span class="agent-row-status">Running</span>
-              </div>
-              <div class="agent-row">
-                <span class="agent-row-name">Campaign Health Monitor</span>
-                <span class="agent-row-status">Watching</span>
-              </div>
-              <div class="agent-row">
-                <span class="agent-row-name">Reporting Agent</span>
-                <span class="agent-row-status">Scheduled</span>
-              </div>
-              <div class="agent-row">
-                <span class="agent-row-name">Payment Follow-up Agent</span>
-                <span class="agent-row-status">Queued</span>
-              </div>
-            </div>
-
-            <div class="stage-panel">
-              <div class="panel-label">Campaign health</div>
-              <div class="metric-grid">
-                <div class="metric-item">
-                  <div class="metric-value">12</div>
-                  <div class="metric-label">Active campaigns</div>
-                </div>
-                <div class="metric-item">
-                  <div class="metric-value">38h</div>
-                  <div class="metric-label">Ops work automated this week</div>
-                </div>
-                <div class="metric-item">
-                  <div class="metric-value">94%</div>
-                  <div class="metric-label">Approvals on schedule</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="workflow-strip" aria-hidden="true">
-            <span class="workflow-node">Brief</span>
-            <span class="workflow-arrow">→</span>
-            <span class="workflow-node">Discovery</span>
-            <span class="workflow-arrow">→</span>
-            <span class="workflow-node">AI agents</span>
-            <span class="workflow-arrow">→</span>
-            <span class="workflow-node">Approvals</span>
-            <span class="workflow-arrow">→</span>
-            <span class="workflow-node">Report</span>
-          </div>
+          <p class="reassurance">No deck. No pressure. Just your workflows.</p>
         </div>
       </div>
     </section>
 
-    <!-- Agents feature grid -->
-    <section class="section" id="agents">
+    <!-- Product story -->
+    <section class="section" id="product">
       <div class="container">
         <div class="section-intro section-intro--center">
-          <h2 class="section-heading">
-            Built for agency operators
+          <h2 class="section-display">
+            Turn ops chaos into a <span class="highlight">locked</span> workflow.
           </h2>
-          <p class="section-sub">
-            Specialized agents for every influencer marketing workflow — from discovery to payment.
+          <p class="section-lead">
+            From brief to payout, every conversation and handoff becomes structured work your agents can monitor — so nothing slips, and nothing gets done twice.
           </p>
-          <div class="cta-row">
-            <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-agents-cta">
-              Get started
-            </a>
-            <a href="#process" class="btn-secondary" id="btn-agents-secondary">
-              How it works
-            </a>
-          </div>
         </div>
 
-        <div class="card-grid card-grid--agents">
-          <article class="info-card reveal">
-            <h3 class="info-card-title">Creator Discovery</h3>
-            <p class="info-card-body">Qualify creators against brief criteria across your existing lists and tools.</p>
+        <div class="story-stack">
+          <article class="sticky-card sticky-card--mint reveal">
+            <p class="mono-label">Before</p>
+            <h3 class="sticky-card__title">Fragmented tools. Manual copy-paste.</h3>
+            <p class="sticky-card__body">
+              Briefs in Notion. Creators in sheets. Contracts in email. Approvals in Slack. Reporting rebuilt from scratch every Friday.
+            </p>
           </article>
-          <article class="info-card reveal reveal-delay-1">
-            <h3 class="info-card-title">Outreach Personalization</h3>
-            <p class="info-card-body">Draft personalized outreach at scale — final sends stay with account managers.</p>
+          <article class="sticky-card sticky-card--cream sticky-card--bordered reveal reveal-delay-1">
+            <p class="mono-label">After</p>
+            <h3 class="sticky-card__title">Agents across the stack you already use.</h3>
+            <p class="sticky-card__body">
+              Deploy for common workflows, or request custom agents for your process. Humans stay in the loop on every decision that matters.
+            </p>
           </article>
-          <article class="info-card reveal reveal-delay-2">
-            <h3 class="info-card-title">Contract Intelligence</h3>
-            <p class="info-card-body">Extract terms, flag gaps, and keep contract status from blocking launch.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain / outcomes -->
+    <section class="section section--tight" id="scope">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <h2 class="section-display">
+            No more ops hiring to grow.<br>
+            No more <span class="highlight">Friday</span> reporting marathons.
+          </h2>
+          <p class="section-lead">
+            Every agent eliminates real manual work — not just generated text. Measure success in hours saved and campaigns shipped, not AI usage.
+          </p>
+        </div>
+
+        <div class="feature-row">
+          <article class="feature-block reveal">
+            <h3 class="feature-block__title">Even in Slack.</h3>
+            <p class="feature-block__body">
+              Status updates and approval threads get turned into trackable work — so campaign managers stop hunting for “what’s blocking launch?”
+            </p>
+            <span class="pill-tag">Integrates with Slack</span>
           </article>
-          <article class="info-card reveal reveal-delay-3">
-            <h3 class="info-card-title">Reporting</h3>
-            <p class="info-card-body">Assemble performance reporting from fragmented sources in hours, not days.</p>
+          <article class="feature-block reveal reveal-delay-1">
+            <h3 class="feature-block__title">We’re in your inbox too.</h3>
+            <p class="feature-block__body">
+              Contract changes and payment nags show up as casual emails. Agents catch them, organize them, and queue the follow-up.
+            </p>
+            <span class="pill-tag">Google Workspace</span>
           </article>
-          <article class="info-card reveal">
-            <h3 class="info-card-title">Payment Follow-up</h3>
-            <p class="info-card-body">Track outstanding payments and nudge follow-ups across inboxes.</p>
+          <article class="feature-block reveal reveal-delay-2">
+            <h3 class="feature-block__title">And wherever the brief lives.</h3>
+            <p class="feature-block__body">
+              Notion, Airtable, CRMs, reporting dashboards — agents connect across tools so your team doesn’t abandon what’s working.
+            </p>
+            <span class="pill-tag">Notion · Airtable · CRM</span>
           </article>
-          <article class="info-card reveal reveal-delay-1">
-            <h3 class="info-card-title">Audit Evidence</h3>
-            <p class="info-card-body">Gather enterprise audit documentation from campaign systems on demand.</p>
-          </article>
+        </div>
+
+        <aside class="callout reveal" aria-label="Outcome callout">
+          <p class="callout__stat">Agencies grow ops complexity faster than revenue.</p>
+          <p class="callout__body">
+            viralEngine is built so a mid-size influencer agency operates with the speed of a team ten times its size — without hiring another full ops layer.
+          </p>
+          <a href="#agents" class="btn-pastel btn-pastel--blush">See the agent library →</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Agent library -->
+    <section class="section" id="agents">
+      <div class="container">
+        <div class="agent-intro">
+          <p class="mono-label">/Agents</p>
+          <h2 class="section-display">
+            A growing library built for <span class="highlight">client</span> work.
+          </h2>
+          <p class="section-lead section-lead--left">
+            Pre-built agents for influencer marketing workflows — plus custom agents designed around how your agency actually runs.
+          </p>
+        </div>
+
+        <ul class="capability-list">
+          <li class="capability-item reveal">Creator discovery &amp; qualification</li>
+          <li class="capability-item reveal reveal-delay-1">Outreach personalization</li>
+          <li class="capability-item reveal reveal-delay-2">Contract intelligence</li>
+          <li class="capability-item reveal">Campaign health monitoring</li>
+          <li class="capability-item reveal reveal-delay-1">Performance reporting</li>
+          <li class="capability-item reveal reveal-delay-2">Payment follow-ups</li>
+          <li class="capability-item reveal">Audit evidence gathering</li>
+          <li class="capability-item reveal reveal-delay-1">Meeting intelligence</li>
+          <li class="capability-item reveal reveal-delay-2">Internal knowledge assistant</li>
+        </ul>
+
+        <div class="agent-strip reveal">
+          <p class="agent-strip__text">
+            Instead of chasing status, rebuilding reports, and piecing together what was agreed — deploy an agent that already knows the workflow. And gets it done.
+          </p>
+          <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-agents-cta">
+            → Get started
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section section--tight" id="integrations">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <h2 class="section-display">
+            Integrate first.<br>
+            <span class="highlight">Automate</span> what slows you down.
+          </h2>
+          <p class="section-lead">
+            Agents fit naturally into established workflows. You shouldn’t have to rip out the stack your clients and creatives already trust.
+          </p>
+        </div>
+
+        <div class="integration-grid">
+          <div class="sticky-card sticky-card--cream sticky-card--bordered reveal">
+            <h3 class="sticky-card__title">Google Workspace</h3>
+            <p class="sticky-card__body">Docs, Sheets, and Gmail — where briefs and follow-ups already live.</p>
+          </div>
+          <div class="sticky-card sticky-card--cream sticky-card--bordered reveal reveal-delay-1">
+            <h3 class="sticky-card__title">Slack</h3>
+            <p class="sticky-card__body">Approvals, client threads, and daily campaign chatter become actionable.</p>
+          </div>
+          <div class="sticky-card sticky-card--cream sticky-card--bordered reveal reveal-delay-2">
+            <h3 class="sticky-card__title">Notion &amp; Airtable</h3>
+            <p class="sticky-card__body">Project boards and creator databases stay the source of truth.</p>
+          </div>
+          <div class="sticky-card sticky-card--cream sticky-card--bordered reveal reveal-delay-3">
+            <h3 class="sticky-card__title">CRMs &amp; reporting</h3>
+            <p class="sticky-card__body">Client context and performance data, pulled when the agent needs them.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -194,71 +245,76 @@
     <section class="section" id="process">
       <div class="container">
         <div class="section-intro section-intro--center">
-          <h2 class="section-heading">
-            Integrate first. Automate what slows you down.
+          <h2 class="section-display">
+            How agencies get their Fridays <span class="highlight">back</span>.
           </h2>
-          <p class="section-sub">
-            Agents work across Slack, Google Workspace, Notion, Airtable, CRMs, and reporting systems — with humans deciding what ships.
+          <p class="section-lead">
+            Human-in-the-loop by design. Agents recommend and automate routine work. Your people decide what ships.
           </p>
         </div>
 
-        <div class="card-grid card-grid--process">
-          <article class="info-card reveal">
-            <span class="info-card-step">1.</span>
-            <h3 class="info-card-title">Discover bottlenecks</h3>
-            <p class="info-card-body">Map operational work that doesn't create client value — and prioritize the highest-leverage workflows.</p>
-          </article>
-          <article class="info-card reveal reveal-delay-1">
-            <span class="info-card-step">2.</span>
-            <h3 class="info-card-title">Deploy &amp; integrate</h3>
-            <p class="info-card-body">Launch pre-built or custom agents. Connect them to tools your team already lives in.</p>
-          </article>
-          <article class="info-card reveal reveal-delay-2">
-            <span class="info-card-step">3.</span>
-            <h3 class="info-card-title">Keep humans in the loop</h3>
-            <p class="info-card-body">Agents recommend and automate routine tasks. Business decisions stay with your people.</p>
-          </article>
-          <article class="info-card reveal reveal-delay-3">
-            <span class="info-card-step">4.</span>
-            <h3 class="info-card-title">Measure outcomes</h3>
-            <p class="info-card-body">Success is hours eliminated and faster turnaround — not AI usage for its own sake.</p>
-          </article>
-        </div>
+        <ol class="process-list">
+          <li class="process-step reveal">
+            <span class="process-step__num" aria-hidden="true">1</span>
+            <div>
+              <h3 class="process-step__title">Discover bottlenecks</h3>
+              <p class="process-step__body">Map operational work that doesn’t create client value — and prioritize the highest-leverage workflows.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-1">
+            <span class="process-step__num" aria-hidden="true">2</span>
+            <div>
+              <h3 class="process-step__title">Deploy &amp; integrate</h3>
+              <p class="process-step__body">Launch pre-built or custom agents. Connect them to tools your team already lives in.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-2">
+            <span class="process-step__num" aria-hidden="true">3</span>
+            <div>
+              <h3 class="process-step__title">Keep humans in the loop</h3>
+              <p class="process-step__body">Agents organize and automate. Business decisions stay with account managers, finance, and founders.</p>
+            </div>
+          </li>
+          <li class="process-step reveal reveal-delay-3">
+            <span class="process-step__num" aria-hidden="true">4</span>
+            <div>
+              <h3 class="process-step__title">Measure outcomes</h3>
+              <p class="process-step__body">Hours eliminated. Campaign turnaround cut. Reporting and audit response times compressed.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Proof -->
-    <section class="section section--proof" id="about">
+    <!-- Closing line -->
+    <section class="section section--tight" id="about">
       <div class="container">
-        <div class="proof-banner reveal">
-          <blockquote class="quote-text">
-            Agencies shouldn't hire more ops staff to grow. They should run more campaigns with the same team — by removing the work that never reaches the client.
+        <div class="closing-panel reveal">
+          <p class="closing-panel__eyebrow mono-label">The point</p>
+          <blockquote class="closing-panel__quote">
+            It’s Friday afternoon. The reports went out, the payments are tracked, and the next campaign brief is already structured. Your team closes the laptop.
           </blockquote>
-          <div class="proof-meta">
-            <span class="attr-name">Built for agency operators</span>
-            <span class="attr-role">Account managers · Campaign managers · Finance · Founders</span>
-          </div>
+          <p class="closing-panel__punch">That’s the point.</p>
         </div>
       </div>
     </section>
 
     <!-- Final CTA -->
     <section class="section" id="cta">
-      <div class="container">
-        <div class="final-cta-panel">
-          <h2 class="section-heading">
-            Operate like a team ten times your size
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <h2 class="section-display">
+            No more drowned-in-ops agencies.<br>
+            No more <span class="highlight">wasted</span> weeks.
           </h2>
-          <p class="section-sub">
-            Talk through your agency workflows. We'll show where AI agents remove busywork — and where people stay in control.
+          <p class="section-lead">
+            Your campaigns run smoother. Your clients stay clear. Your operators stay focused on the work that wins retainers.
           </p>
-          <div class="cta-row">
+          <div class="cta-stack">
             <a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-cta-main">
-              Get started
+              → Book a walkthrough
             </a>
-            <a href="mailto:hello@viralengine.ai" class="btn-secondary" id="btn-cta-secondary">
-              Contact us
-            </a>
+            <p class="reassurance">Talk through your workflows. We’ll show where agents remove busywork.</p>
           </div>
         </div>
       </div>
@@ -268,26 +324,28 @@
   <footer class="footer" id="footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-brand-block">
-          <div class="logo-lockup logo-lockup--nav">
-            <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 1.5L17.5 7L12 12.5L6.5 7Z" fill="currentColor"/>
-              <path d="M12 11.5L17.5 17L12 22.5L6.5 17Z" fill="currentColor"/>
-            </svg>
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo" aria-label="viralEngine Home">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 1.5L17.5 7L12 12.5L6.5 7Z" fill="currentColor"/>
+                <path d="M12 11.5L17.5 17L12 22.5L6.5 17Z" fill="currentColor"/>
+              </svg>
+            </span>
             <span class="logo-wordmark">viralEngine</span>
-          </div>
+          </a>
           <a href="mailto:hello@viralengine.ai" class="footer-email" id="footer-email">hello@viralengine.ai</a>
         </div>
         <ul class="footer-links">
-          <li><a href="#home">Overview</a></li>
           <li><a href="#product">Product</a></li>
           <li><a href="#agents">Agents</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="https://calendly.com/roopamg777/30min" target="_blank" rel="noopener noreferrer">Get started</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 viralEngine. All Rights Reserved.</span>
+        <span class="footer-copy">© 2026 viralEngine. All rights reserved.</span>
         <a href="#home" class="footer-back" id="footer-back-top">Back to top</a>
       </div>
     </div>

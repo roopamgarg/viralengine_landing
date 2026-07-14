@@ -1,49 +1,66 @@
-# Programa — Style Reference
-> Swiss design studio at high noon. A white gallery wall lit by a single yellow desk lamp — everything is grayscale until a button, badge, or highlight demands attention, and then that one yellow note carries the whole room.
+# Say Briefly — Style Reference
+> creative agency sketchbook on cream paper
 
 **Theme:** light
 
-Programa operates in a Swiss-design vocabulary: near-pure white canvas, architectural sans-serif type at tightly tracked small-to-medium sizes, hairline borders, and a single saturated yellow-green accent that functions as a highlighter pen across an otherwise austere page. The entire palette is essentially four grays plus one chromatic signal — chromatic real estate is rationed, not distributed, so when yellow appears it reads as a switch flipped on. Components are slim and confident: 10px radii, thin 1px borders, generous white space, and zero shadow noise. The aesthetic is editorial-portfolio meets productivity tool — restrained enough to feel serious, bold enough to feel like a designer's tool.
+SayBriefly speaks the visual language of a creative studio's moodboard: warm cream paper, a single deep forest green that does the heavy lifting for text and primary actions, and a vivid school-bus yellow that acts as both highlight marker and playful punctuation. Type is deliberately split-personality — Bricolage Grotesque at extrabold for display headlines with positive tracking that gives the words a sticker-book chunkiness, paired with Inter's clean humanist sans for everything functional. The overall feel is approachable, hand-made, and slightly rebellious: rounded 6px corners everywhere, minimal shadows, scattered pastel accent cards that feel like sticky notes rather than UI cards. Color is rationed — green for structure, yellow for emphasis, and tiny washes of teal/pink/orange as decorative one-offs.
 
 ## Tokens — Colors
 
 | Name | Value | Token | Role |
 |------|-------|-------|------|
-| Ink Black | `#1a1a1a` | `--color-ink-black` | Primary text, all borders, icon strokes, logo, divider lines, button outlines — the structural ink that defines every shape on the page |
-| Paper White | `#ffffff` | `--color-paper-white` | Page canvas, card surfaces, text on dark fills, input fields |
-| Fog Gray | `#f4f4f4` | `--color-fog-gray` | Soft section background, alternate surface, and quiet card fill |
-| Ash Gray | `#a3a3a3` | `--color-ash-gray` | Muted secondary text, inactive links, placeholder copy, tertiary metadata |
-| Highlighter Yellow | `#fbff2b` | `--color-highlighter-yellow` | Primary action background, focus highlights, tag fills — the single chromatic accent that makes interactive elements feel switched on against the monochrome system |
+| Forest Ink | `#1a3300` | `--color-forest-ink` | Primary text, filled CTA buttons, link text, nav borders, card borders — the structural backbone. This near-black green carries 90% of the interface weight |
+| Highlighter Yellow | `#ffe95c` | `--color-highlighter-yellow` | Text highlight wash (behind keywords in headlines), badge backgrounds, accent fills. Always reads as a marker stroke, never as a CTA |
+| Cream Paper | `#fcfaf5` | `--color-cream-paper` | Page canvas, card surfaces, nav background — the warm off-white everything sits on. Slightly yellow-shifted to feel like aged paper, not screen white |
+| Pencil Gray | `#b6b6b6` | `--color-pencil-gray` | Nav and divider borders — a single mid-gray for hairlines that should recede |
+| Whisper Gray | `#f1f1f1` | `--color-whisper-gray` | Muted helper text, secondary labels — disappears into the cream canvas |
+| Sticky Note Teal | `#a8e5e5` | `--color-sticky-note-teal` | Teal action color for filled buttons, selected navigation states, and focused conversion moments. |
+| Sticky Note Mint | `#d5f5c2` | `--color-sticky-note-mint` | Green action color for filled buttons, selected navigation states, and focused conversion moments |
+| Sticky Note Blush | `#f6d0ff` | `--color-sticky-note-blush` | Decorative button/card fill. Sprinkle use only |
+| Terracotta | `#cb5521` | `--color-terracotta` | Decorative card accent — warm counterpoint to the green/yellow palette |
 
 ## Tokens — Typography
 
-### Neue Haas Grotesk Text — The single typeface carries every voice on the site — nav, body, headings, buttons, inputs. Weight 400 is the default for body and nav; weight 500 is reserved for emphasized inline labels (e.g. 'Last Updated:') and section opens. The choice of a neo-grotesque with consistent -0.03em tracking at every size creates optical tightness even at 42px, avoiding the airy looseness most sans-serifs default to. This is a Swiss-tool typeface, not a personality typeface — restraint is the signature. · `--font-neue-haas-grotesk-text`
-- **Substitute:** Inter, Neue Haas Grotesk Display Pro (if available), or Helvetica Neue
-- **Weights:** 400, 500
-- **Sizes:** 14px, 16px, 17px, 20px, 24px, 42px
-- **Line height:** 1.10 (display), 1.20 (headings), 1.40 (body)
-- **Letter spacing:** -0.03em at all sizes (approximately -0.42px at 14px, -0.48px at 16px, -0.51px at 17px, -0.6px at 20px, -0.72px at 24px, -1.26px at 42px)
-- **Role:** The single typeface carries every voice on the site — nav, body, headings, buttons, inputs. Weight 400 is the default for body and nav; weight 500 is reserved for emphasized inline labels (e.g. 'Last Updated:') and section opens. The choice of a neo-grotesque with consistent -0.03em tracking at every size creates optical tightness even at 42px, avoiding the airy looseness most sans-serifs default to. This is a Swiss-tool typeface, not a personality typeface — restraint is the signature.
+### Bricolage Grotesque — Display headlines only. Custom variable font with positive tracking (0.04-0.05em) that makes characters feel chunky and sticker-like. This is the signature voice — never use for body or UI. · `--font-bricolage-grotesque`
+- **Substitute:** Archivo Black, or Mulish 900 as fallback
+- **Weights:** 800
+- **Sizes:** 55px, 66px, 90px
+- **Line height:** 1.00-1.20
+- **Letter spacing:** 0.04em at 55px, 0.05em at 66-90px
+- **Role:** Display headlines only. Custom variable font with positive tracking (0.04-0.05em) that makes characters feel chunky and sticker-like. This is the signature voice — never use for body or UI.
 
-### neue-haas-grotesk-text — neue-haas-grotesk-text — detected in extracted data but not described by AI · `--font-neue-haas-grotesk-text`
+### Inter — Everything functional: body copy, nav, buttons, cards, subheadings. Weight 400 for body, 500-600 for labels and subheads, 700 for section headings. Clean humanist sans that lets the Bricolage display type stay loud. · `--font-inter`
+- **Substitute:** system-ui, -apple-system, Segoe UI
+- **Weights:** 300, 400, 500, 600, 700
+- **Sizes:** 11px, 12px, 14px, 16px, 17px, 18px, 20px, 24px, 28px, 30px, 32px, 36px, 38px, 40px, 64px
+- **Line height:** 1.20-1.63
+- **Role:** Everything functional: body copy, nav, buttons, cards, subheadings. Weight 400 for body, 500-600 for labels and subheads, 700 for section headings. Clean humanist sans that lets the Bricolage display type stay loud.
+
+### Roboto Mono — Micro-labels in nav, small caps-style tags, and technical metadata. Mono signals 'tool/utility' context within the otherwise rounded typographic system. · `--font-roboto-mono`
+- **Substitute:** JetBrains Mono, IBM Plex Mono
 - **Weights:** 400
-- **Sizes:** 20px
-- **Line height:** 1.4
-- **Role:** neue-haas-grotesk-text — detected in extracted data but not described by AI
+- **Sizes:** 12px, 15px, 16px
+- **Line height:** 1.00-1.38
+- **Role:** Micro-labels in nav, small caps-style tags, and technical metadata. Mono signals 'tool/utility' context within the otherwise rounded typographic system.
 
 ### Type Scale
 
 | Role | Size | Line Height | Letter Spacing | Token |
 |------|------|-------------|----------------|-------|
-| caption | 14px | 1.4 | -0.42px | `--text-caption` |
-| body-sm | 16px | 1.4 | -0.48px | `--text-body-sm` |
-| subheading | 20px | 1.4 | -0.6px | `--text-subheading` |
-| heading-sm | 24px | 1.2 | -0.72px | `--text-heading-sm` |
-| heading | 42px | 1.1 | -1.26px | `--text-heading` |
+| micro | 11px | 1.3 | — | `--text-micro` |
+| caption | 14px | 1.5 | — | `--text-caption` |
+| body-sm | 16px | 1.5 | — | `--text-body-sm` |
+| body | 18px | 1.5 | — | `--text-body` |
+| body-lg | 20px | 1.38 | — | `--text-body-lg` |
+| subheading | 28px | 1.25 | — | `--text-subheading` |
+| heading-sm | 40px | 1.1 | — | `--text-heading-sm` |
+| heading | 55px | 1 | 2.2px | `--text-heading` |
+| heading-lg | 66px | 1 | 3.3px | `--text-heading-lg` |
+| display | 90px | 1 | 4.5px | `--text-display` |
 
 ## Tokens — Spacing & Shapes
 
-**Base unit:** 6px
+**Base unit:** 8px
 
 **Density:** comfortable
 
@@ -51,150 +68,180 @@ Programa operates in a Swiss-design vocabulary: near-pure white canvas, architec
 
 | Name | Value | Token |
 |------|-------|-------|
-| 6 | 6px | `--spacing-6` |
-| 12 | 12px | `--spacing-12` |
+| 8 | 8px | `--spacing-8` |
+| 16 | 16px | `--spacing-16` |
 | 24 | 24px | `--spacing-24` |
-| 36 | 36px | `--spacing-36` |
+| 32 | 32px | `--spacing-32` |
+| 40 | 40px | `--spacing-40` |
 | 48 | 48px | `--spacing-48` |
+| 56 | 56px | `--spacing-56` |
+| 64 | 64px | `--spacing-64` |
+| 80 | 80px | `--spacing-80` |
 | 96 | 96px | `--spacing-96` |
+| 120 | 120px | `--spacing-120` |
 
 ### Border Radius
 
 | Element | Value |
 |---------|-------|
-| nav | 10px |
-| cards | 16px |
-| inputs | 10px |
-| buttons | 10px |
+| nav | 16px |
+| tags | 9999px |
+| cards | 12px |
+| buttons | 6px |
+
+### Shadows
+
+| Name | Value | Token |
+|------|-------|-------|
+| subtle | `rgba(0, 0, 0, 0.05) 0px 1px 2px 0px` | `--shadow-subtle` |
+| subtle-2 | `rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0p...` | `--shadow-subtle-2` |
+| xl | `rgba(255, 235, 90, 0.01) 0px 527px 211px 0px, rgba(255, 2...` | `--shadow-xl` |
 
 ### Layout
 
 - **Page max-width:** 1200px
-- **Section gap:** 96px
-- **Card padding:** 16px
-- **Element gap:** 12px
+- **Section gap:** 64px
+- **Card padding:** 24px
+- **Element gap:** 16px
 
 ## Components
 
-### Top Navigation Bar
-**Role:** Sticky-style header anchoring page identity and primary destinations
-
-White background, no border-bottom. Left: geometric two-diamond logo (Ink Black) + 'Programa' wordmark at 16-20px weight 400. Center: nav links (Product, Customers, Pricing, Learn) at 16px weight 400, Ink Black, 24px horizontal spacing. Right: 'Log in' as a text link in Ink Black, then a Primary CTA Button. Height feels ~64px with generous horizontal padding.
-
 ### Primary CTA Button
-**Role:** The single high-emphasis action on any screen
+**Role:** Conversion action
 
-Highlighter Yellow (#fbff2b) fill, 1px Ink Black (#1a1a1a) border, 10px border-radius, 8px vertical / 12px horizontal padding. Label in Neue Haas Grotesk Text 16px weight 400, Ink Black. 12px gap between sibling buttons. The 1px black outline around a yellow fill gives the button a hand-stamped, sticker-like quality — it's the only place a border reinforces rather than contains.
+Filled Forest Ink (#1a3300) background, Cream Paper (#fcfaf5) text, 6px radius, padding 19px 40px (or 12px 20px for compact). Inter 500 at 16px. Subtle shadow: rgba(0,0,0,0.05) 0px 1px 2px. Contains inline arrow glyph (→) before label.
 
-### Ghost Text Button
-**Role:** Secondary, low-emphasis action paired with the primary CTA
+### Outline Nav Button
+**Role:** Secondary nav action
 
-No fill, no border. Label in Neue Haas Grotesk Text 16px weight 400, Ink Black. Sits to the left of the Primary CTA. Vertically aligned to the same baseline as the CTA.
+Transparent fill, 1px Forest Ink border, 6px radius, padding 8px 16px. Inter 500 at 14px in Forest Ink. Used for 'Log In' in nav.
 
-### Page Heading
-**Role:** Hero heading for content pages
+### Highlighted Word
+**Role:** Editorial emphasis within display text
 
-Neue Haas Grotesk Text 42px weight 500, Ink Black, line-height 1.10, letter-spacing -1.26px. Left-aligned with 111px left margin. No subtitle, no eyebrow — the heading stands alone.
+Individual words or short phrases in a Bricolage Grotesque headline wrapped in a Highlighter Yellow (#ffe95c) background. The highlight is a rectangular wash behind the text, not a border. Creates a marker-pen effect.
 
-### Info Banner
-**Role:** Metadata callout (e.g. 'Last Updated') below the page heading
+### Logo Mark
+**Role:** Brand identity
 
-Fog Gray (#f4f4f4) fill, no border, 16px border-radius. Padding ~12px vertical / 16px horizontal. Content is a label-value pair: bold label ('Last Updated:') in Ink Black weight 500, followed by value in Ink Black weight 400, both at 16px.
+Two-part lockup: a 40x40 square in Highlighter Yellow containing a hand-drawn 'lo' monogram in Forest Ink (rounded, slightly imperfect strokes), followed by 'SayBriefly' wordmark in Inter 700 at 20px in Forest Ink.
 
-### Numbered Section Block
-**Role:** Ordered content list with bold lead-in label
+### Sticky Note Card
+**Role:** Feature or decorative surface
 
-Decimal number (1., 2., …) flush left at 16px Ink Black weight 400. Indented label (e.g. 'Purpose and Scope') in 16px weight 500 Ink Black. Body paragraphs in 16-17px weight 400 Ink Black at line-height 1.4. Vertical gap between sections: 8px. The bold label + paragraph pattern is a signature — it's the page's only typographic hierarchy device.
+12-16px radius, 24-28px padding, filled with one of the pastel accents (Mint, Blush, Teal, Terracotta) or Cream Paper. Forest Ink text. Optional 1px Forest Ink border. No shadow — the color fill does the separation work.
 
-### Logo Lockup
-**Role:** Brand mark + wordmark for header and footer
+### Top Navigation Bar
+**Role:** Primary site navigation
 
-Two stacked diamond/parallelogram shapes in Ink Black, approximately 24x24px, followed by 'Programa' wordmark in Neue Haas Grotesk Text 20px weight 400, Ink Black, letter-spacing -0.6px. 8px gap between icon and wordmark.
+Cream Paper background, 16px radius container (pill-shaped), 1px Pencil Gray border. Logo left, centered nav links (Inter 500, 14px), auth buttons right. Padding 8-12px vertical. Contains the unusual multi-layer yellow shadow glow that bleeds beyond the nav edges.
 
-### Form Input
-**Role:** Text entry field
+### Tagline Badge
+**Role:** Eyebrow label above headline
 
-1px Ink Black border, 10px border-radius, 6px vertical / 12px horizontal padding. Placeholder text in Ash Gray (#a3a3a3) at 16px. White fill. On focus: border remains Ink Black (no color shift) — the focus state is communicated through weight or ring, not hue.
+Small pill or rounded rectangle with a tiny icon (lightbulb/star), Highlighter Yellow background, Forest Ink text at 12-14px Inter 500. Sits centered above the display headline as a 'category marker'.
 
-### Nav Link
-**Role:** Top-level navigation destination
+### Backed-By Logo Strip
+**Role:** Social proof / credibility bar
 
-Neue Haas Grotesk Text 16px weight 400, Ink Black, no underline, no color shift on hover visible in data. 24px horizontal spacing between links. 4px column gap from the wordmark.
+Small horizontal row of partner/funder logos in muted gray, preceded by 'Backed by:' label in Inter 400 12px. Logos sit at uniform 16-20px height. Appears below primary CTAs.
 
-### Footer Link
-**Role:** Secondary navigation in footer
+### Display Hero Headline
+**Role:** Page-level title
 
-Neue Haas Grotesk Text 14-16px weight 400, Ink Black, muted compared to nav. Typically arranged in columns with 8-12px vertical gap between links.
+Bricolage Grotesque 800 at 66-90px, Forest Ink color, line-height 1.0, letter-spacing 0.04-0.05em. One or two words within the headline get the Highlighter Yellow background treatment.
+
+### Subhead Paragraph
+**Role:** Hero supporting copy
+
+Inter 400 at 18-20px, Forest Ink color, line-height 1.5, max-width ~600px, centered. The only place body text reaches 20px — everywhere else it sits at 16-18px.
+
+### Reassurance Caption
+**Role:** Microcopy below CTA
+
+Inter 400 at 12-14px, Whisper Gray (#f1f1f1) or Pencil Gray. Examples: 'no credit card required.' Sits 8-12px below the primary button.
+
+### Decorative Sketch Element
+**Role:** Atmospheric illustration
+
+Hand-drawn line illustrations in Forest Ink at ~30% opacity, placed as background atmosphere in hero/transition zones. Sharp 1-2px strokes, no fill, slight imperfection in line quality. Not icons — mood.
+
+### Pastel Accent Button
+**Role:** Playful secondary action
+
+Filled with one of the sticky-note pastels (Blush, Teal, Mint), Forest Ink text at 14-16px Inter 500, 6px radius. Used for demo/secondary paths where a green CTA would feel too committed.
 
 ## Do's and Don'ts
 
 ### Do
-- Use #fbff2b fill with 1px #1a1a1a border exclusively for the single primary action per screen — never use the yellow as a background for large surfaces or decorative blocks.
-- Set all text at -0.03em letter-spacing using the Neue Haas Grotesk Text scale (14/16/17/20/24/42px) — do not introduce a second typeface or loosen tracking at display sizes.
-- Apply 10px border-radius to buttons, nav elements, and inputs; reserve 16px for larger card surfaces and info banners.
-- Build vertical rhythm on the 6px base unit: 8px between list items, 12px for element gaps, 16px for card padding, 48-96px for section separation.
-- Use #f4f4f4 as the only mid-surface between white and the yellow accent — never introduce additional gray tints or gradient washes.
-- Keep page layout centered with a 1200px max-width and 111px left margin for content blocks; let white space carry the visual weight.
-- Communicate hierarchy through weight (400 vs 500), not color or size variation — the system has exactly two weights and a tight type scale.
+- Use Forest Ink (#1a3300) for all primary text, links, and CTA buttons — it is the single chromatic workhorse.
+- Set display headlines in Bricolage Grotesque 800 with positive letter-spacing (0.04-0.05em); let it breathe at line-height 1.0.
+- Apply Highlighter Yellow (#ffe95c) as a background wash behind individual words in headlines, not as a button fill or full surface.
+- Use 6px radius for all buttons and 12-16px for cards — never mix sharp 0px corners with the rounded system.
+- Set body copy at 18-20px Inter 400 with 1.5 line-height; this is a comfortable-density reading experience.
+- Separate layers with color fills and 1px borders, not shadows. Shadows are reserved for the nav glow and button lift only.
+- Keep the page 95% cream + forest green. Pastel accents (Mint, Blush, Teal) appear as individual card or button fills, never as large surfaces.
 
 ### Don't
-- Don't introduce drop shadows, glow effects, or blur — elevation is flat and border-defined.
-- Don't use #fbff2b on more than one element per viewport — its power comes from scarcity.
-- Don't add a second accent color; the palette is monochrome + one yellow-green signal.
-- Don't use Ash Gray (#a3a3a3) for body copy — it's a 2.5:1 contrast fail on white; reserve it for placeholders and inactive metadata only.
-- Don't increase border-radius above 16px — the slightly squared geometry is part of the identity.
-- Don't break the 6px spacing grid with arbitrary pixel values; every gap should be a multiple of 6.
-- Don't add a subtitle or eyebrow text above page headings — the 42px heading stands alone.
+- Don't use Bricolage Grotesque for body text, nav, buttons, or anything below 40px — its 800 weight is too heavy for small sizes.
+- Don't introduce a second primary brand color. Forest Ink is the only chromatic authority; everything else is accent or neutral.
+- Don't apply heavy drop shadows. The system relies on color and borders for hierarchy; box-shadows above 2px blur break the flat aesthetic.
+- Don't use pure black (#000000) for text. Forest Ink is the text color — pure black should only appear as SVG fill/stroke in decorative elements.
+- Don't center-align body paragraphs wider than 640px. Headlines and subheads center, but reading copy should be left-aligned or constrained.
+- Don't use Highlighter Yellow as a CTA background. It reads as a marker, not an action — reserve it for text highlight washes.
+- Don't combine multiple pastel accent cards in the same row. Each pastel card should be separated by cream space to maintain the sticky-note rhythm.
 
 ## Surfaces
 
 | Level | Name | Value | Purpose |
 |-------|------|-------|---------|
-| 0 | Canvas | `#ffffff` | Page background — the dominant surface |
-| 1 | Fog Card | `#f4f4f4` | Soft info banners and elevated callouts that recede without a border |
-| 2 | Accent Fill | `#fbff2b` | Highlight wash on primary action surfaces |
+| 1 | Cream Paper | `#fcfaf5` | Page canvas and nav background |
+| 2 | Sticky Note Mint | `#d5f5c2` | Soft feature card surface |
+| 3 | Highlighter Yellow | `#ffe95c` | Accent card or highlighted callout surface |
+| 4 | Sticky Note Blush | `#f6d0ff` | Decorative card surface |
+| 5 | Sticky Note Teal | `#a8e5e5` | Decorative card surface |
 
 ## Elevation
 
-Programa deliberately avoids box-shadows. Elevation is communicated through surface color shifts (white → fog gray) and the 1px ink-black border, not through drop shadows. This keeps the system flat and architectural — the Swiss-design tradition where lines define form, not light.
+- **Primary CTA Button:** `rgba(0, 0, 0, 0.05) 0px 1px 2px 0px`
+- **Secondary Button (hover/active):** `rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px`
 
 ## Imagery
 
-Pure UI with no photography or illustration on this page — the visual language is typographic and structural. Logo is the only graphic mark, rendered as two solid Ink Black geometric shapes (diamond/parallelogram forms). The highlighter-yellow CTA is itself a visual element: a stamped sticker on the white canvas. No icons, no avatars, no product screenshots on the Acceptable Use Policy page. When imagery does appear elsewhere, expect it to be contained within sharp or slightly rounded crops, full-bleed product photography on pure white, and monochromatic or single-accent treatment consistent with the palette.
+Imagery is minimal and hand-crafted rather than photographic. The system uses black-line sketch illustrations at reduced opacity as atmospheric background elements — abstract shapes, partial drawings, and gestural marks that feel like a designer's notebook scribbles bleeding off the page. There is no product photography, no stock imagery, no 3D renders. Decorative elements are monoline (1-2px stroke), unfilled, and deliberately imperfect. The logo mark itself is hand-drawn. Iconography in the interface is small and functional, appearing mostly in the tagline badge and form contexts. The overall image density is low — the page is text-dominant with illustration serving as texture rather than content.
 
 ## Layout
 
-Centered max-width layout (~1200px) with generous side margins (111px+). The header is a flat white bar with no border, logo left, centered nav cluster, auth actions right. Content pages lead with a single large 42px left-aligned heading, followed by a full-width Fog Gray info banner, then a vertically stacked numbered content list that uses bold lead-in labels + paragraphs. Section separation is 48-96px vertical padding. No alternating bands, no sidebar, no grid cards on content pages — the rhythm is a single column of breathing white space punctuated by sparse structural elements.
+Page layout is max-width 1200px centered with generous side padding. The hero is a single centered column: logo top-left in the nav, tagline badge, massive display headline (2 lines), subhead paragraph (~600px), and CTA button stack — all vertically centered with comfortable spacing (64px between blocks). Sections stack vertically without alternating dark/light bands; the cream canvas is consistent throughout. Feature sections transition to 2-column and 3-column card grids further down. The navigation sits in a floating pill-shaped container centered at the top rather than a full-width bar. The overall rhythm is spacious — sections breathe with 64-80px gaps, cards never crowd. The single visual anchor is the centered hero block; everything else is subordinate to it.
 
 ## Agent Prompt Guide
 
-Quick Color Reference:
-- text: #1a1a1a
-- background: #ffffff
-- surface: #f4f4f4
-- border: #1a1a1a
-- muted text: #a3a3a3
-- primary action: #fbff2b (filled action)
+**Quick Color Reference**
+- text: #1a3300 (Forest Ink)
+- background: #fcfaf5 (Cream Paper)
+- border: #b6b6b6 (Pencil Gray)
+- accent: #ffe95c (Highlighter Yellow)
+- muted text: #f1f1f1 (Whisper Gray)
+- primary action: #1a3300 (filled action)
 
-Example Component Prompts:
+**3-5 Example Component Prompts**
 
-1. Create a Primary Action Button: #fbff2b background, #1a1a1a text, 9999px radius, compact pill padding. Use this filled treatment for the main CTA.
+1. Build a hero section on #fcfaf5 canvas. Centered display headline: Bricolage Grotesque 800 at 72px, #1a3300, letter-spacing 0.05em, line-height 1.0. Highlight the word 'brief' with #ffe95c background. Subhead below: Inter 400 at 18px #1a3300, line-height 1.5, max-width 580px. Primary CTA: 6px radius, #1a3300 fill, #fcfaf5 text, padding 19px 40px, Inter 500 16px with '→' glyph.
 
-2. Create a page heading block: 42px Neue Haas Grotesk Text weight 500 #1a1a1a, line-height 1.10, letter-spacing -1.26px, left-aligned with 111px left margin. Below it, an info banner: #f4f4f4 fill, 16px radius, 12px 16px padding, containing 'Last Updated:' in 16px weight 500 #1a1a1a followed by 'January 1, 2026' in 16px weight 400 #1a1a1a.
+2. Build a feature card. 12px radius, 24px padding, #d5f5c2 fill, no shadow. Heading: Inter 600 at 24px #1a3300. Body: Inter 400 at 16px #1a3300 line-height 1.5. Optional 1px #1a3300 border.
 
-3. Create a numbered content section: decimal number '1.' in 16px weight 400 #1a1a1a flush left, then a bold lead-in label in 16px weight 500 #1a1a1a, then a body paragraph in 17px weight 400 #1a1a1a at line-height 1.40. 8px vertical gap to the next section.
+3. Build the floating nav bar. 16px radius, 1px #b6b6b6 border, #fcfaf5 background, horizontal padding 12px. Logo left (40x40 #ffe95c square with 'lo' monogram + 'SayBriefly' Inter 700 20px #1a3300). Center: nav links Inter 500 14px #1a3300. Right: outline button (1px #1a3300 border, 6px radius, 8px 16px padding, Inter 500 14px #1a3300) + filled primary CTA (6px radius, #1a3300 fill, #fcfaf5 text, 8px 16px padding).
 
-4. Create a form input: 1px #1a1a1a border, 10px radius, #ffffff fill, 6px 12px padding. Placeholder 'Enter your email' in 16px #a3a3a3. Label above in 14px weight 500 #1a1a1a with 8px bottom margin.
+4. Build a tagline badge. Inline-flex, 4px vertical padding, 8px horizontal padding, #ffe95c background, 6px radius. Inter 500 at 12px #1a3300, with a small icon glyph (lightbulb or star) preceding the text.
 
-5. Create a secondary card surface: #f4f4f4 fill, 16px border-radius, 24px padding, no border, no shadow. Heading inside in 20px weight 500 #1a1a1a, body in 16px weight 400 #1a1a1a, 12px gap between heading and body.
+5. Build a backed-by strip. Horizontal flex row, 16px gap between items, preceded by 'Backed by:' label in Inter 400 12px #b6b6b6. Partner logos at 16-20px height, displayed in single-color #b6b6b6 or #1a3300.
 
 ## Similar Brands
 
-- **Linear** — Same near-monochrome palette with a single saturated accent (Linear's purple), tight typographic system, and minimal-border component geometry
-- **Figma Config** — Same Swiss-design restraint with hairline borders, generous white space, and a single chromatic accent used sparingly for primary actions
-- **Notion** — Similar flat-no-shadow component language, 10px-ish radii, and a neutral-first palette where one accent color carries the brand
-- **Vercel** — Same editorial minimalism with monochrome canvas, tight tracking on a neo-grotesque typeface, and accent color rationed to CTAs only
-- **Are.na** — Same white-canvas-plus-muted-neutral aesthetic with type-driven hierarchy and zero decorative chrome
+- **Notion** — Same warm minimal canvas with a single near-black color carrying all structural weight, and intentional use of black-line illustration for atmospheric texture.
+- **Linear** — Restrained chromatic palette, generous whitespace, and the confidence to let one bold display typeface carry the brand voice while keeping UI type quiet.
+- **Framer** — Playful creative-tool aesthetic with rounded corners, yellow as an editorial highlight accent, and sketch-style illustration elements.
+- **Pitch** — Same studio-moodboard visual language: cream/warm canvas, bold display type, pastel accent cards scattered like sticky notes, minimal shadow hierarchy.
 
 ## Quick Start
 
@@ -203,65 +250,98 @@ Example Component Prompts:
 ```css
 :root {
   /* Colors */
-  --color-ink-black: #1a1a1a;
-  --color-paper-white: #ffffff;
-  --color-fog-gray: #f4f4f4;
-  --color-ash-gray: #a3a3a3;
-  --color-highlighter-yellow: #fbff2b;
+  --color-forest-ink: #1a3300;
+  --color-highlighter-yellow: #ffe95c;
+  --color-cream-paper: #fcfaf5;
+  --color-pencil-gray: #b6b6b6;
+  --color-whisper-gray: #f1f1f1;
+  --color-sticky-note-teal: #a8e5e5;
+  --color-sticky-note-mint: #d5f5c2;
+  --color-sticky-note-blush: #f6d0ff;
+  --color-terracotta: #cb5521;
 
   /* Typography — Font Families */
-  --font-neue-haas-grotesk-text: 'Neue Haas Grotesk Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-bricolage-grotesque: 'Bricolage Grotesque', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-roboto-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Typography — Scale */
+  --text-micro: 11px;
+  --leading-micro: 1.3;
   --text-caption: 14px;
-  --leading-caption: 1.4;
-  --tracking-caption: -0.42px;
+  --leading-caption: 1.5;
   --text-body-sm: 16px;
-  --leading-body-sm: 1.4;
-  --tracking-body-sm: -0.48px;
-  --text-subheading: 20px;
-  --leading-subheading: 1.4;
-  --tracking-subheading: -0.6px;
-  --text-heading-sm: 24px;
-  --leading-heading-sm: 1.2;
-  --tracking-heading-sm: -0.72px;
-  --text-heading: 42px;
-  --leading-heading: 1.1;
-  --tracking-heading: -1.26px;
+  --leading-body-sm: 1.5;
+  --text-body: 18px;
+  --leading-body: 1.5;
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.38;
+  --text-subheading: 28px;
+  --leading-subheading: 1.25;
+  --text-heading-sm: 40px;
+  --leading-heading-sm: 1.1;
+  --text-heading: 55px;
+  --leading-heading: 1;
+  --tracking-heading: 2.2px;
+  --text-heading-lg: 66px;
+  --leading-heading-lg: 1;
+  --tracking-heading-lg: 3.3px;
+  --text-display: 90px;
+  --leading-display: 1;
+  --tracking-display: 4.5px;
 
   /* Typography — Weights */
+  --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
   /* Spacing */
-  --spacing-unit: 6px;
-  --spacing-6: 6px;
-  --spacing-12: 12px;
+  --spacing-unit: 8px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
   --spacing-24: 24px;
-  --spacing-36: 36px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
   --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
   --spacing-96: 96px;
+  --spacing-120: 120px;
 
   /* Layout */
   --page-max-width: 1200px;
-  --section-gap: 96px;
-  --card-padding: 16px;
-  --element-gap: 12px;
+  --section-gap: 64px;
+  --card-padding: 24px;
+  --element-gap: 16px;
 
   /* Border Radius */
-  --radius-lg: 10px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-xl: 12px;
   --radius-2xl: 16px;
+  --radius-full: 9999px;
 
   /* Named Radii */
-  --radius-nav: 10px;
-  --radius-cards: 16px;
-  --radius-inputs: 10px;
-  --radius-buttons: 10px;
+  --radius-nav: 16px;
+  --radius-tags: 9999px;
+  --radius-cards: 12px;
+  --radius-buttons: 6px;
+
+  /* Shadows */
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  --shadow-subtle-2: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  --shadow-xl: rgba(255, 235, 90, 0.01) 0px 527px 211px 0px, rgba(255, 235, 90, 0.05) 0px 297px 178px 0px, rgba(255, 235, 90, 0.09) 0px 132px 132px 0px, rgba(255, 235, 90, 0.1) 0px 33px 72px 0px;
 
   /* Surfaces */
-  --surface-canvas: #ffffff;
-  --surface-fog-card: #f4f4f4;
-  --surface-accent-fill: #fbff2b;
+  --surface-cream-paper: #fcfaf5;
+  --surface-sticky-note-mint: #d5f5c2;
+  --surface-highlighter-yellow: #ffe95c;
+  --surface-sticky-note-blush: #f6d0ff;
+  --surface-sticky-note-teal: #a8e5e5;
 }
 ```
 
@@ -270,42 +350,69 @@ Example Component Prompts:
 ```css
 @theme {
   /* Colors */
-  --color-ink-black: #1a1a1a;
-  --color-paper-white: #ffffff;
-  --color-fog-gray: #f4f4f4;
-  --color-ash-gray: #a3a3a3;
-  --color-highlighter-yellow: #fbff2b;
+  --color-forest-ink: #1a3300;
+  --color-highlighter-yellow: #ffe95c;
+  --color-cream-paper: #fcfaf5;
+  --color-pencil-gray: #b6b6b6;
+  --color-whisper-gray: #f1f1f1;
+  --color-sticky-note-teal: #a8e5e5;
+  --color-sticky-note-mint: #d5f5c2;
+  --color-sticky-note-blush: #f6d0ff;
+  --color-terracotta: #cb5521;
 
   /* Typography */
-  --font-neue-haas-grotesk-text: 'Neue Haas Grotesk Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-bricolage-grotesque: 'Bricolage Grotesque', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-roboto-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Typography — Scale */
+  --text-micro: 11px;
+  --leading-micro: 1.3;
   --text-caption: 14px;
-  --leading-caption: 1.4;
-  --tracking-caption: -0.42px;
+  --leading-caption: 1.5;
   --text-body-sm: 16px;
-  --leading-body-sm: 1.4;
-  --tracking-body-sm: -0.48px;
-  --text-subheading: 20px;
-  --leading-subheading: 1.4;
-  --tracking-subheading: -0.6px;
-  --text-heading-sm: 24px;
-  --leading-heading-sm: 1.2;
-  --tracking-heading-sm: -0.72px;
-  --text-heading: 42px;
-  --leading-heading: 1.1;
-  --tracking-heading: -1.26px;
+  --leading-body-sm: 1.5;
+  --text-body: 18px;
+  --leading-body: 1.5;
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.38;
+  --text-subheading: 28px;
+  --leading-subheading: 1.25;
+  --text-heading-sm: 40px;
+  --leading-heading-sm: 1.1;
+  --text-heading: 55px;
+  --leading-heading: 1;
+  --tracking-heading: 2.2px;
+  --text-heading-lg: 66px;
+  --leading-heading-lg: 1;
+  --tracking-heading-lg: 3.3px;
+  --text-display: 90px;
+  --leading-display: 1;
+  --tracking-display: 4.5px;
 
   /* Spacing */
-  --spacing-6: 6px;
-  --spacing-12: 12px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
   --spacing-24: 24px;
-  --spacing-36: 36px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
   --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
   --spacing-96: 96px;
+  --spacing-120: 120px;
 
   /* Border Radius */
-  --radius-lg: 10px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-xl: 12px;
   --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  --shadow-subtle-2: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  --shadow-xl: rgba(255, 235, 90, 0.01) 0px 527px 211px 0px, rgba(255, 235, 90, 0.05) 0px 297px 178px 0px, rgba(255, 235, 90, 0.09) 0px 132px 132px 0px, rgba(255, 235, 90, 0.1) 0px 33px 72px 0px;
 }
 ```

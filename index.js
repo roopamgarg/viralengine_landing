@@ -1,5 +1,5 @@
 /**
- * viralEngine — Programa landing interactions
+ * viralEngine — landing interactions
  * Mobile nav, smooth anchors, scroll reveal
  */
 
@@ -39,6 +39,10 @@ const init = () => {
         closeMenu();
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
   }
 
   const revealEls = document.querySelectorAll('.reveal');
@@ -72,7 +76,7 @@ const init = () => {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.pageYOffset - 64;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 88;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });
