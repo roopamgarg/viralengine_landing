@@ -905,6 +905,94 @@ main,
   opacity: 0.7;
 }
 
+/* ===== LEGAL / PRIVACY ===== */
+.legal-hero {
+  padding: calc(var(--spacing-120) + var(--spacing-32)) 0 var(--spacing-32);
+}
+
+.legal-title {
+  font-family: var(--font-bricolage-grotesque);
+  font-weight: var(--font-weight-extrabold);
+  font-size: clamp(40px, 8vw, var(--text-heading));
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-forest-ink);
+  margin: var(--spacing-16) 0 var(--spacing-16);
+}
+
+.legal-updated {
+  font-family: var(--font-roboto-mono);
+  font-size: var(--text-caption);
+  color: var(--color-forest-ink);
+  opacity: 0.55;
+  margin-bottom: var(--spacing-24);
+}
+
+.legal-lead {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-forest-ink);
+  max-width: 62ch;
+}
+
+.legal-section {
+  padding-top: var(--spacing-24);
+}
+
+.legal-content {
+  color: var(--color-forest-ink);
+}
+
+.legal-content h2 {
+  font-family: var(--font-inter);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  margin: var(--spacing-56) 0 var(--spacing-16);
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content h3 {
+  font-family: var(--font-inter);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+  margin: var(--spacing-32) 0 var(--spacing-8);
+}
+
+.legal-content p,
+.legal-content li {
+  font-size: var(--text-body-sm);
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.legal-content p {
+  margin-bottom: var(--spacing-16);
+}
+
+.legal-content ul {
+  margin: 0 0 var(--spacing-24);
+  padding-left: var(--spacing-24);
+}
+
+.legal-content li {
+  margin-bottom: var(--spacing-8);
+}
+
+.legal-content a {
+  color: var(--color-forest-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover {
+  opacity: 0.7;
+}
+
 /* ===== REVEAL ===== */
 .reveal {
   opacity: 0;
