@@ -985,6 +985,25 @@ main,
   padding-left: var(--spacing-24);
 }
 
+.legal-content ol.legal-steps,
+.legal-content ol {
+  margin: 0 0 var(--spacing-24);
+  padding-left: var(--spacing-24);
+}
+
+.legal-content ol.legal-steps > li,
+.legal-content ol > li {
+  font-size: var(--text-body-sm);
+  line-height: 1.65;
+  max-width: 68ch;
+  margin-bottom: var(--spacing-16);
+}
+
+.legal-content ol.legal-steps ul {
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
 .legal-content li {
   margin-bottom: var(--spacing-8);
 }
